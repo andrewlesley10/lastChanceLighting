@@ -4,6 +4,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Last Chance Lighting | Technical Luxury Lighting</title>
+<link rel="icon" type="image/png" href="favicon.png"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=DM+Sans:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -138,16 +139,16 @@
 <!-- TopNavBar -->
 <header class="bg-surface-container-low dark:bg-surface-container-low docked full-width top-0 sticky z-50 border-b border-surface-variant h-20 transition-all duration-300">
 <div class="flex justify-between items-center h-full w-full px-6 lg:px-24 max-w-[1440px] mx-auto">
-<div class="font-headline-md text-headline-md font-bold tracking-tight text-on-surface">
-                Last Chance Lighting
-            </div>
+<a href="home.html" class="flex items-center h-16">
+                <img src="logo.png" alt="Last Chance Lighting" class="h-16 w-auto object-contain">
+            </a>
 <!-- Desktop Nav -->
 <nav class="hidden md:flex gap-8 items-center h-full">
-<a class="text-primary border-b-2 border-primary pb-1 font-body-md text-body-md hover:glow-sm transition-all duration-300 active:scale-95" href="#">Home</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:glow-sm transition-all duration-300 active:scale-95" href="#">Products</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:glow-sm transition-all duration-300 active:scale-95" href="#">Our Projects</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:glow-sm transition-all duration-300 active:scale-95" href="#">About Us</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:glow-sm transition-all duration-300 active:scale-95" href="#">Contact Us</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-body-md text-body-md hover:glow-sm transition-all duration-300 active:scale-95" href="home.html">Home</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:glow-sm transition-all duration-300 active:scale-95" href="products.html">Products</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:glow-sm transition-all duration-300 active:scale-95" href="projects.html">Our Projects</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:glow-sm transition-all duration-300 active:scale-95" href="about.html">About Us</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:glow-sm transition-all duration-300 active:scale-95" href="contact.html">Contact Us</a>
 </nav>
 <button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-label-caps text-label-caps uppercase transition-all duration-300 hover:glow-sm active:scale-95">
                 Request a Quote
@@ -430,56 +431,66 @@
 <p class="text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">Consult with our lighting engineers to develop a custom solution for your project. From technical specs to aesthetic perfection, we deliver.</p>
 <div class="flex flex-col sm:flex-row gap-6 justify-center">
 <button class="bg-[#EF1C25] text-[#F5F5F3] px-10 py-4 rounded-lg font-headline-md text-headline-md hover:bg-[#C9141C] transition-all hover:shadow-[0_0_20px_rgba(255,75,83,0.4)] active:scale-95">Request a Quote</button>
-<button class="border border-[#343436] text-on-surface px-10 py-4 rounded-lg font-headline-md text-headline-md hover:border-primary transition-all active:scale-95">Our Projects</button>
+<a href="projects.html" class="border border-[#343436] text-on-surface px-10 py-4 rounded-lg font-headline-md text-headline-md hover:border-primary transition-all active:scale-95 inline-block">Our Projects</a>
 </div>
 </div>
 </section>
 </main>
 <!-- Footer -->
-<footer class="bg-surface-container-lowest border-t border-surface-variant">
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-surface-variant">
 <div class="grid grid-cols-1 md:grid-cols-4 gap-section-gap px-6 lg:px-24 py-20 max-w-[1440px] mx-auto">
-<div class="flex flex-col gap-6">
-<div class="font-headline-md text-headline-md font-bold text-on-surface">Last Chance Lighting</div>
-<p class="text-on-surface-variant font-body-md">Redefining architectural lighting through technical luxury and precision engineering.</p>
+<div class="md:col-span-1">
+<a href="home.html" class="inline-block mb-6">
+  <img src="logo.png" alt="Last Chance Lighting" class="h-20 w-auto object-contain">
+</a>
+<p class="text-on-surface-variant font-body-md mb-8">Specialized architectural lighting for those who value the intersection of form and function.</p>
 <div class="flex gap-4">
 <a class="w-10 h-10 rounded bg-surface-container flex items-center justify-center hover:bg-primary transition-colors group" href="#">
-<span class="material-symbols-outlined text-on-surface group-hover:text-on-primary">public</span>
+<svg class="w-5 h-5 text-on-surface group-hover:text-on-primary transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+</svg>
 </a>
 <a class="w-10 h-10 rounded bg-surface-container flex items-center justify-center hover:bg-primary transition-colors group" href="#">
-<span class="material-symbols-outlined text-on-surface group-hover:text-on-primary">alternate_email</span>
+<svg class="w-5 h-5 text-on-surface group-hover:text-on-primary transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+</svg>
 </a>
 </div>
 </div>
-<div class="flex flex-col gap-6">
-<p class="font-label-caps text-label-caps text-primary">NAVIGATION</p>
-<ul class="flex flex-col gap-3">
-<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Home</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Products</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Our Projects</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Contact Us</a></li>
+<div class="md:col-span-1">
+<h4 class="font-label-caps text-label-caps text-primary mb-6 uppercase tracking-widest">Solutions</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Interior Lighting</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Facade Systems</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Landscape Optics</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Custom Fabrication</a></li>
 </ul>
 </div>
-<div class="flex flex-col gap-6">
-<p class="font-label-caps text-label-caps text-primary">LEGAL</p>
-<ul class="flex flex-col gap-3">
+<div class="md:col-span-1">
+<h4 class="font-label-caps text-label-caps text-primary mb-6 uppercase tracking-widest">Company</h4>
+<ul class="space-y-4">
+<li><a class="text-primary underline" href="about.html">About Us</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="projects.html">Our Projects</a></li>
 <li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Privacy Policy</a></li>
 <li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Terms of Service</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Shipping &amp; Returns</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">FAQ</a></li>
 </ul>
 </div>
-<div class="flex flex-col gap-6">
-<p class="font-label-caps text-label-caps text-primary">CONTACT</p>
-<p class="text-on-surface-variant font-body-md">123 Lighting Avenue,<br/>Colombo 00700,<br/>Sri Lanka</p>
-<p class="text-on-surface-variant font-body-md">info@lastchancelighting.com<br/>+94 11 234 5678</p>
+<div class="md:col-span-1">
+<h4 class="font-label-caps text-label-caps text-primary mb-6 uppercase tracking-widest">Contact</h4>
+<ul class="space-y-4 text-on-surface-variant">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-sm">mail</span> contact@lastchancelighting.com</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-sm">call</span> +1 (800) LUX-LITE</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-sm">location_on</span> Design District, New York, NY</li>
+</ul>
 </div>
 </div>
-<div class="px-6 lg:px-24 py-10 border-t border-surface-variant/30 flex flex-col md:flex-row justify-between items-center gap-6 max-w-[1440px] mx-auto">
-<p class="font-body-md text-on-surface-variant opacity-80 text-center md:text-left">© 2024 Last Chance Lighting (Pvt) Ltd. All rights reserved.</p>
-<div class="flex gap-4">
-<span class="w-8 h-5 rounded bg-surface-container"></span>
-<span class="w-8 h-5 rounded bg-surface-container"></span>
-<span class="w-8 h-5 rounded bg-surface-container"></span>
+<div class="px-6 lg:px-24 py-8 border-t border-surface-variant/50 max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="text-on-surface-variant font-label-caps text-[10px] opacity-80 hover:opacity-100 transition-opacity">© 2024 Last Chance Lighting (Pvt) Ltd. All rights reserved.</span>
+<div class="flex gap-8">
+<a class="text-on-surface-variant font-label-caps text-[10px] uppercase hover:text-on-surface" href="#">Shipping &amp; Returns</a>
+<a class="text-on-surface-variant font-label-caps text-[10px] uppercase hover:text-on-surface" href="#">FAQ</a>
 </div>
 </div>
 </footer>
