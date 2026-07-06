@@ -139,9 +139,24 @@
 <a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:glow-sm transition-all duration-300" href="about.html">About Us</a>
 <a class="text-primary border-b-2 border-primary pb-1 font-body-md text-body-md hover:glow-sm transition-all duration-300" href="contact.html">Contact Us</a>
 </nav>
-<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-label-caps text-label-caps uppercase transition-all duration-300 hover:glow-sm active:scale-95">
+<div class="flex items-center gap-3">
+<a class="hidden md:inline-flex bg-primary-container text-on-primary-container px-6 py-2.5 rounded-lg font-label-caps text-label-caps uppercase tracking-widest active:scale-95 transition-all duration-200 hover:glow-sm" href="contact.html">
                 Request a Quote
-            </button>
+            </a>
+<button class="md:hidden inline-flex h-12 w-12 items-center justify-center rounded-lg border border-surface-variant text-on-surface transition-colors hover:bg-surface-variant" id="mobile-menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-nav-panel">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+<div class="md:hidden hidden border-t border-surface-variant bg-surface-container-low" id="mobile-nav-panel">
+<nav class="flex flex-col gap-2 px-6 py-4">
+<a class="rounded-lg px-4 py-3 text-on-surface-variant transition-colors hover:bg-surface-variant hover:text-on-surface" href="home.html">Home</a>
+<a class="rounded-lg px-4 py-3 text-on-surface-variant transition-colors hover:bg-surface-variant hover:text-on-surface" href="products.html">Products</a>
+<a class="rounded-lg px-4 py-3 text-on-surface-variant transition-colors hover:bg-surface-variant hover:text-on-surface" href="projects.html">Our Projects</a>
+<a class="rounded-lg px-4 py-3 text-on-surface-variant transition-colors hover:bg-surface-variant hover:text-on-surface" href="about.html">About Us</a>
+<a class="rounded-lg px-4 py-3 text-primary" href="contact.html">Contact Us</a>
+<a class="mt-2 rounded-lg bg-primary px-4 py-3 text-center font-label-caps text-label-caps uppercase tracking-widest text-on-primary" href="contact.html">Request a Quote</a>
+</nav>
 </div>
 </header>
 <main>
@@ -163,28 +178,29 @@
 <div class="lg:col-span-7 bg-surface-container rounded-xl border border-surface-variant p-8 lg:p-12">
 <h2 class="font-headline-lg text-headline-lg mb-2">Send Us a Message</h2>
 <p class="text-on-surface-variant mb-8">Fill out the form below and we'll get back to you within 24 hours.</p>
-<form class="space-y-6" id="contact-form">
+<div class="hidden mb-6 rounded-lg border border-surface-variant bg-surface-container-low px-4 py-3 text-sm" id="form-status"></div>
+<form action="contact.php" class="space-y-6" id="contact-form" method="post">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div>
-<label class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-2 block" for="firstName">First Name</label>
-<input class="contact-input w-full bg-surface-container-low border border-surface-variant rounded-lg px-4 py-3 text-on-surface outline-none transition-all" id="firstName" placeholder="John" type="text"/>
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-2 block" for="firstName">First Name <span class="ml-1 text-[#EF1C25]" aria-hidden="true">*</span></label>
+<input class="contact-input w-full bg-surface-container-low border border-surface-variant rounded-lg px-4 py-3 text-on-surface outline-none transition-all" id="firstName" name="firstName" placeholder="John" required type="text"/>
 </div>
 <div>
 <label class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-2 block" for="lastName">Last Name</label>
-<input class="contact-input w-full bg-surface-container-low border border-surface-variant rounded-lg px-4 py-3 text-on-surface outline-none transition-all" id="lastName" placeholder="Doe" type="text"/>
+<input class="contact-input w-full bg-surface-container-low border border-surface-variant rounded-lg px-4 py-3 text-on-surface outline-none transition-all" id="lastName" name="lastName" placeholder="Doe" type="text"/>
 </div>
 </div>
 <div>
-<label class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-2 block" for="email">Email Address</label>
-<input class="contact-input w-full bg-surface-container-low border border-surface-variant rounded-lg px-4 py-3 text-on-surface outline-none transition-all" id="email" placeholder="john@example.com" type="email"/>
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-2 block" for="email">Email Address <span class="ml-1 text-[#EF1C25]" aria-hidden="true">*</span></label>
+<input class="contact-input w-full bg-surface-container-low border border-surface-variant rounded-lg px-4 py-3 text-on-surface outline-none transition-all" id="email" name="email" placeholder="john@example.com" required type="email"/>
 </div>
 <div>
 <label class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-2 block" for="phone">Phone Number</label>
-<input class="contact-input w-full bg-surface-container-low border border-surface-variant rounded-lg px-4 py-3 text-on-surface outline-none transition-all" id="phone" placeholder="+94 XX XXX XXXX" type="tel"/>
+<input class="contact-input w-full bg-surface-container-low border border-surface-variant rounded-lg px-4 py-3 text-on-surface outline-none transition-all" id="phone" name="phone" placeholder="+94 XX XXX XXXX" type="tel"/>
 </div>
 <div>
-<label class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-2 block" for="projectType">Project Type</label>
-<select class="contact-input w-full bg-surface-container-low border border-surface-variant rounded-lg px-4 py-3 text-on-surface outline-none transition-all" id="projectType">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-2 block" for="projectType">Project Type <span class="ml-1 text-[#EF1C25]" aria-hidden="true">*</span></label>
+<select class="contact-input w-full bg-surface-container-low border border-surface-variant rounded-lg px-4 py-3 text-on-surface outline-none transition-all" id="projectType" name="projectType" required>
 <option value="">Select a project type</option>
 <option value="residential">Residential</option>
 <option value="commercial">Commercial</option>
@@ -195,8 +211,8 @@
 </select>
 </div>
 <div>
-<label class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-2 block" for="message">Your Message</label>
-<textarea class="contact-input w-full bg-surface-container-low border border-surface-variant rounded-lg px-4 py-3 text-on-surface outline-none transition-all min-h-[150px] resize-y" id="message" placeholder="Tell us about your project..."></textarea>
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-2 block" for="message">Your Message <span class="ml-1 text-[#EF1C25]" aria-hidden="true">*</span></label>
+<textarea class="contact-input w-full bg-surface-container-low border border-surface-variant rounded-lg px-4 py-3 text-on-surface outline-none transition-all min-h-[150px] resize-y" id="message" name="message" placeholder="Tell us about your project..." required></textarea>
 </div>
 <button class="w-full bg-[#EF1C25] text-[#F5F5F3] px-8 py-4 rounded-lg font-headline-md text-headline-md hover:bg-[#C9141C] transition-all hover:shadow-[0_0_20px_rgba(255,75,83,0.4)] active:scale-95" type="submit">
                             Send Message
@@ -238,7 +254,7 @@
 </div>
 <h3 class="font-headline-md text-headline-md">Email Us</h3>
 </div>
-<p class="text-on-surface-variant font-body-md">info@lastchancelighting.com</p>
+<p class="text-on-surface-variant font-body-md">info@lastchancelighting.lk</p>
 <p class="text-on-surface-variant font-body-md mt-1">We reply within 24 hours</p>
 </div>
 <!-- Showroom Hours Card -->
@@ -306,7 +322,7 @@
 </main>
 <!-- Footer -->
 <footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-surface-variant">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-section-gap px-6 lg:px-24 py-20 max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-section-gap px-6 lg:px-24 py-20 max-w-[1440px] mx-auto">
 <div class="md:col-span-1">
 <a href="home.html" class="inline-block mb-6">
   <img src="logo.png" alt="Last Chance Lighting" class="h-20 w-auto object-contain">
@@ -328,27 +344,19 @@
 </div>
 </div>
 <div class="md:col-span-1">
-<h4 class="font-label-caps text-label-caps text-primary mb-6 uppercase tracking-widest">Solutions</h4>
-<ul class="space-y-4">
-<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Interior Lighting</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Facade Systems</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Landscape Optics</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Custom Fabrication</a></li>
-</ul>
-</div>
-<div class="md:col-span-1">
 <h4 class="font-label-caps text-label-caps text-primary mb-6 uppercase tracking-widest">Company</h4>
 <ul class="space-y-4">
-<li><a class="text-primary underline" href="about.html">About Us</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="home.html">Home</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="products.html">Products</a></li>
 <li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="projects.html">Our Projects</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Privacy Policy</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="about.html">About Us</a></li>
+<li><a class="text-primary underline" href="contact.html">Contact Us</a></li>
 </ul>
 </div>
 <div class="md:col-span-1">
 <h4 class="font-label-caps text-label-caps text-primary mb-6 uppercase tracking-widest">Contact</h4>
 <ul class="space-y-4 text-on-surface-variant">
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-sm">mail</span> contact@lastchancelighting.com</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-sm">mail</span> info@lastchancelighting.lk</li>
 <li class="flex items-center gap-3"><span class="material-symbols-outlined text-sm">call</span> +1 (800) LUX-LITE</li>
 <li class="flex items-center gap-3"><span class="material-symbols-outlined text-sm">location_on</span> Design District, New York, NY</li>
 </ul>
@@ -363,20 +371,54 @@
 </div>
 </footer>
 <script>
-        // Simple form submission handler
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const btn = this.querySelector('button[type="submit"]');
-            const originalText = btn.textContent;
-            btn.textContent = 'Message Sent ✓';
-            btn.classList.remove('bg-[#EF1C25]', 'hover:bg-[#C9141C]');
-            btn.classList.add('bg-green-700');
-            setTimeout(() => {
-                btn.textContent = originalText;
-                btn.classList.add('bg-[#EF1C25]', 'hover:bg-[#C9141C]');
-                btn.classList.remove('bg-green-700');
-                this.reset();
-            }, 3000);
-        });
-    </script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggleButton = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-nav-panel');
+    const icon = toggleButton ? toggleButton.querySelector('span') : null;
+    const statusBox = document.getElementById('form-status');
+    const params = new URLSearchParams(window.location.search);
+    const status = params.get('status');
+    const message = params.get('message');
+
+    if (statusBox && status) {
+      statusBox.classList.remove('hidden');
+      if (status === 'success') {
+        statusBox.className = 'mb-6 rounded-lg border border-green-700/30 bg-green-900/20 px-4 py-3 text-sm text-green-200';
+        statusBox.textContent = 'Thank you! Your message has been sent successfully.';
+      } else {
+        statusBox.className = 'mb-6 rounded-lg border border-red-700/30 bg-red-900/20 px-4 py-3 text-sm text-red-200';
+        statusBox.textContent = message || 'There was a problem sending your message. Please try again.';
+      }
+    }
+
+    if (!toggleButton || !mobileMenu) return;
+
+    const closeMenu = function () {
+      mobileMenu.classList.add('hidden');
+      toggleButton.setAttribute('aria-expanded', 'false');
+      if (icon) icon.textContent = 'menu';
+    };
+
+    toggleButton.addEventListener('click', function () {
+      const isOpen = this.getAttribute('aria-expanded') === 'true';
+      if (isOpen) {
+        closeMenu();
+      } else {
+        mobileMenu.classList.remove('hidden');
+        this.setAttribute('aria-expanded', 'true');
+        if (icon) icon.textContent = 'close';
+      }
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', closeMenu);
+    });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth >= 768) {
+        closeMenu();
+      }
+    });
+  });
+</script>
 </body></html>

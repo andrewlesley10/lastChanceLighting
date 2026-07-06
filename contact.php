@@ -1,47 +1,72 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Get and clean form values
-    $name    = trim($_POST['name'] ?? '');
-    $email   = trim($_POST['email'] ?? '');
-    $phone   = trim($_POST['phone'] ?? '');
-    $message = trim($_POST['message'] ?? '');
-
-    // Basic validation (server-side)
-    if ($name === '' || $email === '' || $phone === '' || $message === '') {
-        http_response_code(400);
-        echo "Missing required fields.";
-        exit;
-    }
-
-    // Send to both addresses
-    $to = "info@orthosports.lk, piremsanth@orthosports.lk, kamalakanth@orthosports.lk";
-
-    $subject = "New contact form message from $name";
-
-    $body  = "You have received a new message from the contact form on orthosports.lk.\n\n";
-    $body .= "Name:  $name\n";
-    $body .= "Email: $email\n";
-    $body .= "Phone: $phone\n\n";
-    $body .= "Message:\n$message\n";
-
-    // Email headers
-    $headers  = "From: Orthosports Website <info@orthosports.lk>\r\n";
-    $headers .= "Reply-To: $email\r\n";
-    $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
-
-    if (mail($to, $subject, $body, $headers)) {
-        // Simple success page (for normal form submit)
-        echo "<!DOCTYPE html><html><head><meta charset='UTF-8'><title>Thank You</title>";
-        echo "<meta name='viewport' content='width=device-width, initial-scale=1.0'></head><body>";
-        echo "<h2>Thank you for your message!</h2>";
-        echo "<p>We have received your enquiry and will get back to you soon.</p>";
-        echo "<p><a href='/'>Back to home page</a></p>";
-        echo "</body></html>";
-    } else {
-        http_response_code(500);
-        echo "Sorry, we could not send your message. Please try again later.";
-    }
-} else {
-    http_response_code(405);
-    echo "Method not allowed.";
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Location: contact.html');
+    exit;
 }
+
+$firstName = trim($_POST['firstName'] ?? '');
+$lastName = trim($_POST['lastName'] ?? '');
+$email = trim($_POST['email'] ?? '');
+$phone = trim($_POST['phone'] ?? '');
+$projectType = trim($_POST['projectType'] ?? '');
+$message = trim($_POST['message'] ?? '');
+
+$errors = [];
+
+if ($firstName === '') {
+    $errors[] = 'First name is required.';
+}
+
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $errors[] = 'A valid email address is required.';
+}
+
+if ($projectType === '') {
+    $errors[] = 'Project type is required.';
+}
+
+if ($message === '') {
+    $errors[] = 'Your message is required.';
+}
+
+if (!empty($errors)) {
+    $query = http_build_query([
+        'status' => 'error',
+        'message' => implode(' ', $errors),
+    ]);
+    header('Location: contact.html?' . $query);
+    exit;
+}
+
+$to = 'info@lastchancelighting.lk';
+$subject = 'New contact form submission from ' . htmlspecialchars($firstName, ENT_QUOTES, 'UTF-8');
+
+$body = "First Name: $firstName\n";
+if ($lastName !== '') {
+    $body .= "Last Name: $lastName\n";
+}
+$body .= "Email: $email\n";
+if ($phone !== '') {
+    $body .= "Phone: $phone\n";
+}
+$body .= "Project Type: $projectType\n\n";
+$body .= "Message:\n$message\n";
+
+$headers = [];
+$headers[] = 'From: no-reply@lastchancelighting.lk';
+$headers[] = 'Reply-To: ' . $email;
+$headers[] = 'Content-Type: text/plain; charset=UTF-8';
+
+$sent = mail($to, $subject, $body, implode("\r\n", $headers));
+
+if ($sent) {
+    header('Location: contact.html?status=success');
+    exit;
+}
+
+$query = http_build_query([
+    'status' => 'error',
+    'message' => 'Your message could not be sent right now. Please try again later.',
+]);
+header('Location: contact.html?' . $query);
+exit;
