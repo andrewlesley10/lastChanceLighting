@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Last Chance Lighting | Technical Luxury Lighting</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=DM+Sans:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@100..900&amp;family=Sora:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .glow-sm:hover {
+            box-shadow: 0 0 15px rgba(239, 28, 37, 0.3);
+        }
+        .light-reveal-overlay {
+            background: linear-gradient(to bottom, rgba(18, 18, 18, 0.4) 0%, rgba(18, 18, 18, 0.8) 100%);
+            transition: opacity 0.5s ease;
+        }
+        .card-hover-reveal:hover .light-reveal-overlay {
+            opacity: 0.2;
+        }
+        .tap-highlight-transparent {
+            -webkit-tap-highlight-color: transparent;
+        }
+        @keyframes subtle-zoom {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
+        }
+        .animate-zoom {
+            animation: subtle-zoom 6s ease-in-out infinite alternate;
+        }
+        .red-glow-spotlight {
+            background: radial-gradient(circle at center, rgba(239, 28, 37, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#93000a",
+                        "tertiary": "#ffb3b0",
+                        "on-secondary-container": "#d3b169",
+                        "tertiary-fixed-dim": "#ffb3b0",
+                        "on-primary-container": "#5c0005",
+                        "secondary-fixed": "#ffdf9e",
+                        "on-secondary": "#3f2e00",
+                        "secondary": "#e5c279",
+                        "primary": "#ffb4ac",
+                        "surface": "#131313",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-dim": "#131313",
+                        "on-surface-variant": "#e8bcb7",
+                        "primary-fixed": "#ffdad6",
+                        "surface-bright": "#393939",
+                        "inverse-primary": "#c00015",
+                        "surface-variant": "#353534",
+                        "on-background": "#e5e2e1",
+                        "tertiary-container": "#ff5358",
+                        "surface-container": "#201f1f",
+                        "on-primary-fixed": "#410002",
+                        "tertiary-fixed": "#ffdad8",
+                        "on-tertiary-container": "#5b000d",
+                        "surface-tint": "#ffb4ac",
+                        "on-secondary-fixed": "#261a00",
+                        "secondary-fixed-dim": "#e5c279",
+                        "on-error-container": "#ffdad6",
+                        "outline-variant": "#5e3f3c",
+                        "on-tertiary": "#680010",
+                        "on-surface": "#e5e2e1",
+                        "secondary-container": "#5b4303",
+                        "primary-container": "#ff544c",
+                        "on-error": "#690005",
+                        "on-secondary-fixed-variant": "#5b4303",
+                        "background": "#131313",
+                        "primary-fixed-dim": "#ffb4ac",
+                        "on-primary": "#690006",
+                        "outline": "#ae8783",
+                        "surface-container-highest": "#353534",
+                        "surface-container-high": "#2a2a2a",
+                        "on-primary-fixed-variant": "#93000d",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-container-lowest": "#0e0e0e",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed-variant": "#93001a",
+                        "on-tertiary-fixed": "#410006",
+                        "inverse-on-surface": "#313030"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "section-gap": "80px",
+                        "unit": "4px",
+                        "stack-md": "16px",
+                        "container-max": "1440px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Sora"],
+                        "headline-lg": ["Sora"],
+                        "body-md": ["DM Sans"],
+                        "headline-md": ["Sora"],
+                        "headline-lg-mobile": ["Sora"],
+                        "body-lg": ["DM Sans"],
+                        "technical-data": ["DM Sans"],
+                        "label-caps": ["Sora"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "technical-data": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="bg-surface-container-low dark:bg-surface-container-low docked full-width top-0 sticky z-50 border-b border-surface-variant h-20 transition-all duration-300">
+<div class="flex justify-between items-center h-full w-full px-6 lg:px-24 max-w-[1440px] mx-auto">
+<div class="font-headline-md text-headline-md font-bold tracking-tight text-on-surface">
+                Last Chance Lighting
+            </div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex gap-8 items-center h-full">
+<a class="text-primary border-b-2 border-primary pb-1 font-body-md text-body-md hover:glow-sm transition-all duration-300 active:scale-95" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:glow-sm transition-all duration-300 active:scale-95" href="#">Products</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:glow-sm transition-all duration-300 active:scale-95" href="#">Our Projects</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:glow-sm transition-all duration-300 active:scale-95" href="#">About Us</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:glow-sm transition-all duration-300 active:scale-95" href="#">Contact Us</a>
+</nav>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-label-caps text-label-caps uppercase transition-all duration-300 hover:glow-sm active:scale-95">
+                Request a Quote
+            </button>
+</div>
+</header>
+<main>
+<!-- Hero Carousel Section -->
+<section class="relative h-[calc(100vh-80px)] overflow-hidden bg-black">
+<div class="flex transition-transform duration-700 ease-in-out h-full w-[400%]" id="hero-slider">
+<!-- Slide 1: Residential -->
+<div class="w-1/4 h-full relative group">
+<div class="absolute inset-0 bg-cover bg-center animate-zoom" data-alt="A luxurious minimalist living room at dusk with technical architectural lighting. Sleek warm LED strips highlight the sharp concrete edges and dark wood textures. The atmosphere is sophisticated and quiet, with a single deep red accent light illuminating a high-end sculptural chair in the corner. High-contrast architectural photography." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAYBo2M_rtYKG5KLrnU-EnxjA_zXu30SE7qLrIc7xAMgtxjaRL8m9z2ZvnVNVuYYfBIU2xESz3FIpWiFufmYKsPFpQgcem4GVFEmZDsTR_Lpv2IldptsYWjxNVtSrru9iK3iujbk-iUj5NOAbPCMWMUuYInbE9Vj6hHhARh6IzFZdbInHMhhXgIsF3LLDuLqwkd4bCiZxC_zzdf4PEQHYEr-RynE-LLFTwj4K82UXaCo9tMdOMKisHxsg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent opacity-80"></div>
+<div class="absolute inset-0 flex flex-col justify-center items-start px-6 lg:px-24 max-w-[1440px] mx-auto z-10">
+<span class="text-primary font-label-caps text-label-caps tracking-[0.2em] mb-4">RESIDENTIAL</span>
+<h1 class="font-headline-xl text-headline-xl mb-6 max-w-2xl">Elevating the Art of Living</h1>
+<button class="bg-[#EF1C25] text-[#F5F5F3] px-8 py-4 rounded-lg font-headline-md text-headline-md hover:bg-[#C9141C] transition-all hover:shadow-[0_0_20px_rgba(255,75,83,0.4)] active:scale-95">View Collection</button>
+</div>
+</div>
+<!-- Slide 2: Commercial -->
+<div class="w-1/4 h-full relative group">
+<div class="absolute inset-0 bg-cover bg-center animate-zoom" data-alt="A wide angle shot of a futuristic corporate lobby with massive glass panels and black marble floors. Linear architectural lighting fixtures trace the ceiling in perfect geometric patterns. The lighting is crisp, cold white with subtle red light leaks reflecting off the polished dark surfaces. Minimalist, premium, technical luxury aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDh_S4YvzX0y97F4YsQiNB8_k1Txoo4T7CxLa570eUdBV0FpIulRG0nkXXT89aLXs-7Oy84xkZbIcsTI82mxpKT181SpaV3ue-7IIn-NpT34TJGr0z4LcfVUJ1zNLuimJZ0RNU0wsPBsQVc8sMnRWfj5UzEcI-6jJHDo4sU0GLc5fBheyEgYEeWxHiOanziPY8bWqQY4QNsL715wix6nf3dmEYG5nTyn095sTIlxwnCeGQisGIJ3ZCVbA')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent opacity-80"></div>
+<div class="absolute inset-0 flex flex-col justify-center items-start px-6 lg:px-24 max-w-[1440px] mx-auto z-10">
+<span class="text-primary font-label-caps text-label-caps tracking-[0.2em] mb-4">COMMERCIAL</span>
+<h1 class="font-headline-xl text-headline-xl mb-6 max-w-2xl">Defining Modern Workspace</h1>
+<button class="bg-[#EF1C25] text-[#F5F5F3] px-8 py-4 rounded-lg font-headline-md text-headline-md hover:bg-[#C9141C] transition-all hover:shadow-[0_0_20px_rgba(255,75,83,0.4)] active:scale-95">Explore Solutions</button>
+</div>
+</div>
+<!-- Slide 3: Outdoor -->
+<div class="w-1/4 h-full relative group">
+<div class="absolute inset-0 bg-cover bg-center animate-zoom" data-alt="An ultra-modern villa exterior at night. Precision landscape lighting grazes textured stone walls and illuminates architectural plants from below. The lighting creates dramatic long shadows on the dark obsidian exterior. Controlled spotlights emphasize the building's geometry with clinical precision. High-end luxury real estate photography." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBG7qIVVAXbkPbyisuDmHSTnpaDkqh8K615OJzOvjcZLImnISSy1cfpYHFgFa-VGiMbcIfs0ZSULgTRwn0XcVv_ObLa9xLhT2cSGe4WVCzCBSSguLHfVO7eJm5nePsW58BUVvECR0TpOhBPyKxwlQSlDKVMZ1p-Brt_fb2QBdELL6gIktOkk8YqTVaMXI_CnMZlrNyX9EtorS3oRBrWVXspwMyeRVeZCAVD7KGB89TvV1UxpWi5ddhN4Q')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent opacity-80"></div>
+<div class="absolute inset-0 flex flex-col justify-center items-start px-6 lg:px-24 max-w-[1440px] mx-auto z-10">
+<span class="text-primary font-label-caps text-label-caps tracking-[0.2em] mb-4">OUTDOOR</span>
+<h1 class="font-headline-xl text-headline-xl mb-6 max-w-2xl">Sculpting Space with Light</h1>
+<button class="bg-[#EF1C25] text-[#F5F5F3] px-8 py-4 rounded-lg font-headline-md text-headline-md hover:bg-[#C9141C] transition-all hover:shadow-[0_0_20px_rgba(255,75,83,0.4)] active:scale-95">Outdoor Range</button>
+</div>
+</div>
+<!-- Slide 4: Construction -->
+<div class="w-1/4 h-full relative group">
+<div class="absolute inset-0 bg-cover bg-center animate-zoom" data-alt="A technical cross-section of a high-end construction project showing integrated smart lighting systems. Bare concrete walls meet futuristic recessed light channels. The mood is industrial-lux, focused on technical precision and engineering. Deep shadows contrasted with sharp blades of red and white light. Architects office vibes." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB4canL5ZycBJyuALm3Pp1nZFuzyy-bIYbmnFOOuiSRVaRjvPxfGEcyYAd8wqMt39VCvyeEVZzevrz1NFvCgwqGeQa1nlY5qA4nc9-XJCsMlRsfSAVZQXyEz9AW4pFN4ajSvDTVL71HV81WITcK48jz0Ykz9duQ9arcrAgJAyuXXW_mSXuL29YaDc3vFF29viSRv5TM9NZxavHBA-uJ846Z8Cs7atbNuKu2w_xd8T_bOuigWlqagmrZJA')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent opacity-80"></div>
+<div class="absolute inset-0 flex flex-col justify-center items-start px-6 lg:px-24 max-w-[1440px] mx-auto z-10">
+<span class="text-primary font-label-caps text-label-caps tracking-[0.2em] mb-4">CONSTRUCTION</span>
+<h1 class="font-headline-xl text-headline-xl mb-6 max-w-2xl">Precision Engineering at Scale</h1>
+<button class="bg-[#EF1C25] text-[#F5F5F3] px-8 py-4 rounded-lg font-headline-md text-headline-md hover:bg-[#C9141C] transition-all hover:shadow-[0_0_20px_rgba(255,75,83,0.4)] active:scale-95">Technical Specs</button>
+</div>
+</div>
+</div>
+<!-- Carousel Indicators -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-4 z-20">
+<button class="hero-dot w-12 h-1 bg-primary transition-all duration-300 opacity-100" onclick="gotoSlide(0)"></button>
+<button class="hero-dot w-12 h-1 bg-[#343436] transition-all duration-300 opacity-50 hover:opacity-100" onclick="gotoSlide(1)"></button>
+<button class="hero-dot w-12 h-1 bg-[#343436] transition-all duration-300 opacity-50 hover:opacity-100" onclick="gotoSlide(2)"></button>
+<button class="hero-dot w-12 h-1 bg-[#343436] transition-all duration-300 opacity-50 hover:opacity-100" onclick="gotoSlide(3)"></button>
+</div>
+</section>
+<!-- Intro Section -->
+<section class="py-section-gap px-6 lg:px-24 max-w-[1440px] mx-auto text-center">
+<h2 class="font-headline-lg text-headline-lg mb-4">More Than Lights.</h2>
+<h3 class="font-headline-md text-headline-md text-primary mb-8">Complete Lighting Solutions.</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">
+                We bridge the gap between architectural vision and technical reality. Last Chance Lighting provides precision-engineered lighting systems that define space, evoke emotion, and deliver performance.
+            </p>
+</section>
+<!-- Core Services -->
+<section class="py-section-gap px-6 lg:px-24 max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Residential -->
+<div class="bg-[#252527] rounded-xl border border-[#343436] p-stack-lg group hover:border-primary transition-all duration-500 overflow-hidden relative">
+<div class="red-glow-spotlight absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6">home</span>
+<h4 class="font-headline-md text-headline-md mb-4">Residential</h4>
+<p class="text-on-surface-variant mb-6">Bespoke lighting designs for luxury homes, focusing on ambiance and smart integration.</p>
+<a class="inline-flex items-center text-primary font-label-caps text-label-caps hover:gap-4 transition-all" href="#">LEARN MORE <span class="material-symbols-outlined ml-2">arrow_forward</span></a>
+</div>
+<!-- Commercial -->
+<div class="bg-[#252527] rounded-xl border border-[#343436] p-stack-lg group hover:border-primary transition-all duration-500 overflow-hidden relative">
+<div class="red-glow-spotlight absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6">business</span>
+<h4 class="font-headline-md text-headline-md mb-4">Commercial</h4>
+<p class="text-on-surface-variant mb-6">High-performance lighting for offices, retail, and hospitality that boosts productivity and sales.</p>
+<a class="inline-flex items-center text-primary font-label-caps text-label-caps hover:gap-4 transition-all" href="#">LEARN MORE <span class="material-symbols-outlined ml-2">arrow_forward</span></a>
+</div>
+<!-- Project Solutions -->
+<div class="bg-[#252527] rounded-xl border border-[#343436] p-stack-lg group hover:border-primary transition-all duration-500 overflow-hidden relative">
+<div class="red-glow-spotlight absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6">construction</span>
+<h4 class="font-headline-md text-headline-md mb-4">Project Solutions</h4>
+<p class="text-on-surface-variant mb-6">End-to-end technical support for developers, from specification to final installation.</p>
+<a class="inline-flex items-center text-primary font-label-caps text-label-caps hover:gap-4 transition-all" href="#">LEARN MORE <span class="material-symbols-outlined ml-2">arrow_forward</span></a>
+</div>
+</div>
+</section>
+<!-- Product Categories -->
+<section class="py-section-gap px-6 lg:px-24 max-w-[1440px] mx-auto">
+<div class="flex justify-between items-end mb-12">
+<div>
+<span class="text-primary font-label-caps text-label-caps">COLLECTIONS</span>
+<h2 class="font-headline-lg text-headline-lg mt-2">Product Categories</h2>
+</div>
+<a class="hidden md:block text-on-surface-variant hover:text-primary transition-colors border-b border-[#343436] pb-1" href="#">Browse Catalog</a>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Chandelier -->
+<div class="relative aspect-[4/5] rounded-xl overflow-hidden group cursor-pointer card-hover-reveal">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A modern minimalist chandelier with dark bronze finishes and warm glowing light tubes suspended in a high-ceilinged room. Dramatic shadows on the ceiling. Professional architectural lighting catalog shot with high dynamic range." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAZ96eIvzDSpcrY9vLt-PxFn7t6HWi98EAE8og8P9xyo_WxFvQmenqLOnRZM4IrEOB2clQM-tySyDPTEodAfIDFfARBKnfuLHVXeEE3pL-Cs0ptZwJnobGhFIst4apvkmx7YW6gku51fzpNE-CwSgeAc2yufJiKqZfefsxf_xd0RogTj4JLllDVvA_AcVdH8gMG9iNPGWpzW1kuNbgCQhAMM1tuyIotoVSp3M3YirgSz2BhUIn5zb2laA')"></div>
+<div class="light-reveal-overlay absolute inset-0"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<p class="font-headline-md text-headline-md">Chandeliers</p>
+</div>
+</div>
+<!-- LED -->
+<div class="relative aspect-[4/5] rounded-xl overflow-hidden group cursor-pointer card-hover-reveal">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Technical close-up of a seamless recessed LED magnetic track system. Precise white beams of light illuminate a dark grey textured wall. Clean linear design. High-end electrical engineering detail, minimalist aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB8YjNompAQxIg3ndAsxtbjSyDE3ToPPDz3UKLjvf5a58E0qhIUYX_9AfXmlHoLfc7bcv8ra9UFlMR7tfNsc1LekB1zvHyQVqLv2I9wUrX53IgWpVMjK2HzoOBQRFOgkOOk-xKMzNSbiwSGDNO-5q-YN1TThmner6BWJLxL9dIbYHUTJL7SLHMmSdjfdMgrgk_4lmBtDV8ue9diy70eu6OBUn6KfgTl5FIIY346Ujq4Pu2Fx2fQtt-Jfg')"></div>
+<div class="light-reveal-overlay absolute inset-0"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<p class="font-headline-md text-headline-md">LED Systems</p>
+</div>
+</div>
+<!-- Wall -->
+<div class="relative aspect-[4/5] rounded-xl overflow-hidden group cursor-pointer card-hover-reveal">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Sophisticated outdoor wall sconces throwing double-sided beams of light on a concrete facade. Dramatic up-and-down lighting patterns. Minimalist architecture, dark sky setting, luxury property at night." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCLn-qPoD3fquB0zqL2ejYMkFLXHxD44yh7ZXeZvvMx4tPmk-MuA-sCUriy0lvGwbjOuL2HlgN7g9qJeU5xp0zRSKYNrIA6x8GHAjbvDyEEjQCHFm4p8b7lBoKWfvUtfgKjT6O8dAiwvgDvfTUb_UeqC45rb2IrPgMsfctOA30ytJKYNQ0BJK3qge-p8XtS1vq8IkGPiLJdgzqgcLY41swqN7PM18slvxO4XMDMt3DtQQYQ-3tfH3-RyA')"></div>
+<div class="light-reveal-overlay absolute inset-0"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<p class="font-headline-md text-headline-md">Wall Lighting</p>
+</div>
+</div>
+<!-- Outdoor -->
+<div class="relative aspect-[4/5] rounded-xl overflow-hidden group cursor-pointer card-hover-reveal">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Elegant garden pathway with low-level bollard lights casting soft pools of light on polished dark gravel. Lush dark foliage in the background. Calm and secure outdoor environment. Architectural landscape lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBTfAVrdbiytEHMthfghzCWL130GVCF99JoIT1j30iHLKSizCIf_O4oNtwqdmeuo_GCUKC6jGV4qOXKpDUDj2-0cZOq0RIf8Oi33OrA7NV9JcxVynbp-FPuuEYHQY2ixDH7Z85_NROVVEzLbfh5Ma9OQzwzrJTHGSZ0M1NrrgEY9PB6IczzwwmFF4-hp8yMCpT4EKr0_EFM4KbdSnUyP3tRaw1k7vFMdQwm--GF18DlMpk1uiDMxs9mvQ')"></div>
+<div class="light-reveal-overlay absolute inset-0"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<p class="font-headline-md text-headline-md">Outdoor</p>
+</div>
+</div>
+<!-- Industrial -->
+<div class="relative aspect-[4/5] rounded-xl overflow-hidden group cursor-pointer card-hover-reveal">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="High-bay industrial lighting fixtures in a modern warehouse conversion. Exposed conduits and black steel beams. Bright cool white light highlighting structural details. Industrial chic aesthetic, high-contrast, technical." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBW8DrqGkMgnaRABTB7bWg7_lxuL1y3zbWDVevnnWb94_jmek7Z9-SzdTjKSxkA2y_3WG9SFJm8N8HjSpU9KpJnU5lttetKXpzsds8fk2Jphreu8N2moQJ8kfye0TVL_fptBsqtUinJTyWIzGusCjP77zxrAiXwFIn6W7L_Ef59KEFZ-kp7MIatUGfURGx48FBGkFdxOoxrCwQsYUZWiI3AQIp1d4zTL_Bd3z1P2oxu8z94MlzsbAMc6g')"></div>
+<div class="light-reveal-overlay absolute inset-0"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<p class="font-headline-md text-headline-md">Industrial</p>
+</div>
+</div>
+<!-- Smart -->
+<div class="relative aspect-[4/5] rounded-xl overflow-hidden group cursor-pointer card-hover-reveal">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A smartphone interface controlling home lighting colors. In the background, a room shifts from warm white to a subtle deep red accent. Smart home automation, futuristic technology, user interface focus with blurred luxury interior." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCnL1BG_uxdPxlnU7NO6dRTL1zNVDr-lc4YX6a4bM_Ub7wCLqGRtgCl4detLlkFwaXsQfoRgWQUNL9BWNgwd3L7sjz-MqC9asDuoybEvJZzMW1_1e9pbvksPtM9xSVY3M-JfXbRF9Md50RQ9xQJ8UZAXZO6iDYsLtXN2-bKQkwK5TEGaVsUx7idlL_FPypfU9QJEVBM_w9CLBOEZ15Hm22ksB2Q2qx8sCNuVy4E6-p6t7yy010-C9YSBg')"></div>
+<div class="light-reveal-overlay absolute inset-0"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<p class="font-headline-md text-headline-md">Smart Systems</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us -->
+<section class="py-section-gap bg-surface-container-low">
+<div class="px-6 lg:px-24 max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="flex flex-col gap-4">
+<div class="text-primary font-headline-xl text-headline-xl">01</div>
+<h5 class="font-headline-md text-headline-md">Quality</h5>
+<p class="text-on-surface-variant font-body-md text-body-md">Sourcing only premium components and fixtures from global leading manufacturers.</p>
+</div>
+<div class="flex flex-col gap-4">
+<div class="text-primary font-headline-xl text-headline-xl">02</div>
+<h5 class="font-headline-md text-headline-md">Scale</h5>
+<p class="text-on-surface-variant font-body-md text-body-md">Proven track record of managing multi-million dollar lighting projects across the island.</p>
+</div>
+<div class="flex flex-col gap-4">
+<div class="text-primary font-headline-xl text-headline-xl">03</div>
+<h5 class="font-headline-md text-headline-md">Expertise</h5>
+<p class="text-on-surface-variant font-body-md text-body-md">Technical support team with deep knowledge of lighting engineering and architectural integration.</p>
+</div>
+<div class="flex flex-col gap-4">
+<div class="text-primary font-headline-xl text-headline-xl">04</div>
+<h5 class="font-headline-md text-headline-md">Impact</h5>
+<p class="text-on-surface-variant font-body-md text-body-md">Lighting designs that transform spaces and significantly increase property value.</p>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-section-gap px-6 lg:px-24 max-w-[1440px] mx-auto">
+<h2 class="font-headline-lg text-headline-lg mb-16 text-center">What Our Clients Say</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Nadeesha -->
+<div class="bg-[#252527] p-8 rounded-xl border border-[#343436] flex flex-col gap-6">
+<div class="flex gap-1 text-[#EF1C25]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic text-on-surface text-body-lg">"The technical precision Last Chance Lighting brought to our luxury villa project was unparalleled. They understood the architecture better than we did."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-variant border border-[#343436] flex items-center justify-center text-primary font-bold">N</div>
+<div>
+<p class="font-bold">Nadeesha Perera</p>
+<p class="text-sm text-on-surface-variant">Lead Architect, NP Designs</p>
+</div>
+</div>
+</div>
+<!-- Kasun -->
+<div class="bg-[#252527] p-8 rounded-xl border border-[#343436] flex flex-col gap-6">
+<div class="flex gap-1 text-[#EF1C25]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic text-on-surface text-body-lg">"Their commercial lighting solutions transformed our retail space. We saw a noticeable increase in foot traffic and dwell time almost immediately."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-variant border border-[#343436] flex items-center justify-center text-primary font-bold">K</div>
+<div>
+<p class="font-bold">Kasun Jayawardena</p>
+<p class="text-sm text-on-surface-variant">Director, Prime Retail Group</p>
+</div>
+</div>
+</div>
+<!-- Shehan -->
+<div class="bg-[#252527] p-8 rounded-xl border border-[#343436] flex flex-col gap-6">
+<div class="flex gap-1 text-[#EF1C25]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic text-on-surface text-body-lg">"From technical drawings to final commissioning, the team was professional, knowledgeable, and incredibly precise. Highly recommended."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-variant border border-[#343436] flex items-center justify-center text-primary font-bold">S</div>
+<div>
+<p class="font-bold">Shehan Silva</p>
+<p class="text-sm text-on-surface-variant">Senior Engineer, Metro Build</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Projects -->
+<section class="py-section-gap px-6 lg:px-24 max-w-[1440px] mx-auto">
+<div class="flex justify-between items-center mb-12">
+<h2 class="font-headline-lg text-headline-lg">Featured Projects</h2>
+<button class="border border-[#343436] px-6 py-2 rounded hover:border-primary transition-all">View All Work</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-lg">
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden rounded-lg aspect-video mb-4">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A grand luxury hotel lobby in Colombo with cascading custom light installations and dark marble floors. The lighting is majestic and theatrical, using warm and cool tones to define different zones. High-end architectural photography." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCjwQcr62UwTF9OMVMfE7f49evi23fimDKtgtl5qkr_AcIJyGZW-XC3UHdC9ruXN7c8FKW4WGRQ4eI9JG-qAewzpUcJXehQXXBa54Yqf8qASIHTloUI8P_Adryb2A21BlBnJlpZtYk5MJSkeqxVvxwDPc8sokshS43qJI3vq360HLHtlXpyj39whJi2FFADAdvHOaB1-NVYUZSqjfOX3IIEIorTPFJHRqzAtqvkACiNfYqfVpgUP5g1JQ')"></div>
+<div class="absolute top-4 right-4 bg-primary text-on-primary-container px-3 py-1 rounded-full text-xs font-bold">HOTEL</div>
+</div>
+<h6 class="font-headline-md text-headline-md">The Grand Pavilion</h6>
+<p class="text-on-surface-variant">Bespoke Lobby &amp; Corridor Lighting</p>
+</div>
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden rounded-lg aspect-video mb-4">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A modern high-tech office floor at night with linear pendant lighting and smart control panels. The lighting is uniform and glare-free, focusing on human-centric design. Cool white and subtle blue tones." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCyWmgTIEHAD2j5aFs7JNZumYkVimMO1qdn1PAGu1a67R_Hf7Fhx_aXX-owaWNRG1ByCwhW7u-01-Rzzmp9skgvV5ZmuD3vZzg017b9y4Pg9em9lce7xN6HVVPsN5aU5KXD1nXzIrBZz369w9iMtIowcYKMv-ZsoYYmx8tmY-murMsg9YvTIURnV-Kl-W_8wC2jDXKgr38Tro_jraYo8mYDfkP3K9HJS0mNpIvgnltS8uEQmSE6NjwvUg')"></div>
+<div class="absolute top-4 right-4 bg-primary text-on-primary-container px-3 py-1 rounded-full text-xs font-bold">CORPORATE</div>
+</div>
+<h6 class="font-headline-md text-headline-md">Skyline Towers</h6>
+<p class="text-on-surface-variant">Smart Office Lighting System</p>
+</div>
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden rounded-lg aspect-video mb-4">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A futuristic private residence with glowing exterior lines and integrated garden lighting. The lighting highlights the sharp angles of the black steel and concrete architecture. Dark obsidian aesthetic with vibrant light accents." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBt7ZJj6MSw25IQPzvOAWSVc7MJo6rroIh4GRqab9wiKALFJgk9yNeLcvs28hH3QIldGewdL6kOmJHdocO7JCNckgQBLP-usyYRcBB8uwTnd5QbFIEwvIppeqOLnFc06sVUPdkJQ1Z42JWo70RzUpiiJdeX62CnBw9uDj2PM_VRU-QiiB_Kp-RPde8C6Rl-lf2k6phP8494nf1jTPNcq758PugDBk5_RYYbv0zuNRaRjep0uN02QWBPEg')"></div>
+<div class="absolute top-4 right-4 bg-primary text-on-primary-container px-3 py-1 rounded-full text-xs font-bold">VILLA</div>
+</div>
+<h6 class="font-headline-md text-headline-md">Aura Residence</h6>
+<p class="text-on-surface-variant">Full Home Architectural Integration</p>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-24 relative overflow-hidden">
+
+<div class="relative z-10 px-6 lg:px-24 max-w-[1440px] mx-auto text-center bg-[#121212]/80 backdrop-blur-sm py-16 rounded-3xl border border-[#343436]">
+<h2 class="font-headline-xl text-headline-xl mb-6">Ready to Brighten Your Space?</h2>
+<p class="text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">Consult with our lighting engineers to develop a custom solution for your project. From technical specs to aesthetic perfection, we deliver.</p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center">
+<button class="bg-[#EF1C25] text-[#F5F5F3] px-10 py-4 rounded-lg font-headline-md text-headline-md hover:bg-[#C9141C] transition-all hover:shadow-[0_0_20px_rgba(255,75,83,0.4)] active:scale-95">Request a Quote</button>
+<button class="border border-[#343436] text-on-surface px-10 py-4 rounded-lg font-headline-md text-headline-md hover:border-primary transition-all active:scale-95">Our Projects</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-surface-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-section-gap px-6 lg:px-24 py-20 max-w-[1440px] mx-auto">
+<div class="flex flex-col gap-6">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">Last Chance Lighting</div>
+<p class="text-on-surface-variant font-body-md">Redefining architectural lighting through technical luxury and precision engineering.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded bg-surface-container flex items-center justify-center hover:bg-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-on-surface group-hover:text-on-primary">public</span>
+</a>
+<a class="w-10 h-10 rounded bg-surface-container flex items-center justify-center hover:bg-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-on-surface group-hover:text-on-primary">alternate_email</span>
+</a>
+</div>
+</div>
+<div class="flex flex-col gap-6">
+<p class="font-label-caps text-label-caps text-primary">NAVIGATION</p>
+<ul class="flex flex-col gap-3">
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Home</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Products</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Our Projects</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div class="flex flex-col gap-6">
+<p class="font-label-caps text-label-caps text-primary">LEGAL</p>
+<ul class="flex flex-col gap-3">
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Shipping &amp; Returns</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">FAQ</a></li>
+</ul>
+</div>
+<div class="flex flex-col gap-6">
+<p class="font-label-caps text-label-caps text-primary">CONTACT</p>
+<p class="text-on-surface-variant font-body-md">123 Lighting Avenue,<br/>Colombo 00700,<br/>Sri Lanka</p>
+<p class="text-on-surface-variant font-body-md">info@lastchancelighting.com<br/>+94 11 234 5678</p>
+</div>
+</div>
+<div class="px-6 lg:px-24 py-10 border-t border-surface-variant/30 flex flex-col md:flex-row justify-between items-center gap-6 max-w-[1440px] mx-auto">
+<p class="font-body-md text-on-surface-variant opacity-80 text-center md:text-left">© 2024 Last Chance Lighting (Pvt) Ltd. All rights reserved.</p>
+<div class="flex gap-4">
+<span class="w-8 h-5 rounded bg-surface-container"></span>
+<span class="w-8 h-5 rounded bg-surface-container"></span>
+<span class="w-8 h-5 rounded bg-surface-container"></span>
+</div>
+</div>
+</footer>
+<script>
+        let currentSlide = 0;
+        const slider = document.getElementById('hero-slider');
+        const dots = document.querySelectorAll('.hero-dot');
+        const totalSlides = 4;
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentSlide * 25}%)`;
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add('bg-primary', 'opacity-100');
+                    dot.classList.remove('bg-[#343436]', 'opacity-50');
+                } else {
+                    dot.classList.remove('bg-primary', 'opacity-100');
+                    dot.classList.add('bg-[#343436]', 'opacity-50');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }
+
+        function gotoSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
+
+        setInterval(nextSlide, 5000);
+
+        // Interactive Spotlight Effect on Mouse Move
+        document.addEventListener('mousemove', (e) => {
+            const spotlights = document.querySelectorAll('.red-glow-spotlight');
+            spotlights.forEach(spotlight => {
+                const rect = spotlight.parentElement.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                spotlight.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(239, 28, 37, 0.15) 0%, transparent 70%)`;
+            });
+        });
+    </script>
+</body></html>

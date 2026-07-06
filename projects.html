@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Our Projects | Last Chance Lighting</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#93000a",
+                    "tertiary": "#ffb3b0",
+                    "on-secondary-container": "#d3b169",
+                    "tertiary-fixed-dim": "#ffb3b0",
+                    "on-primary-container": "#5c0005",
+                    "secondary-fixed": "#ffdf9e",
+                    "on-secondary": "#3f2e00",
+                    "secondary": "#e5c279",
+                    "primary": "#ffb4ac",
+                    "surface": "#131313",
+                    "surface-container-low": "#1c1b1b",
+                    "surface-dim": "#131313",
+                    "on-surface-variant": "#e8bcb7",
+                    "primary-fixed": "#ffdad6",
+                    "surface-bright": "#393939",
+                    "inverse-primary": "#c00015",
+                    "surface-variant": "#353534",
+                    "on-background": "#e5e2e1",
+                    "tertiary-container": "#ff5358",
+                    "surface-container": "#201f1f",
+                    "on-primary-fixed": "#410002",
+                    "tertiary-fixed": "#ffdad8",
+                    "on-tertiary-container": "#5b000d",
+                    "surface-tint": "#ffb4ac",
+                    "on-secondary-fixed": "#261a00",
+                    "secondary-fixed-dim": "#e5c279",
+                    "on-error-container": "#ffdad6",
+                    "outline-variant": "#5e3f3c",
+                    "on-tertiary": "#680010",
+                    "on-surface": "#e5e2e1",
+                    "secondary-container": "#5b4303",
+                    "primary-container": "#ff544c",
+                    "on-error": "#690005",
+                    "on-secondary-fixed-variant": "#5b4303",
+                    "background": "#131313",
+                    "primary-fixed-dim": "#ffb4ac",
+                    "on-primary": "#690006",
+                    "outline": "#ae8783",
+                    "surface-container-highest": "#353534",
+                    "surface-container-high": "#2a2a2a",
+                    "on-primary-fixed-variant": "#93000d",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-container-lowest": "#0e0e0e",
+                    "error": "#ffb4ab",
+                    "on-tertiary-fixed-variant": "#93001a",
+                    "on-tertiary-fixed": "#410006",
+                    "inverse-on-surface": "#313030"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "8px",
+                    "section-gap": "80px",
+                    "unit": "4px",
+                    "stack-md": "16px",
+                    "container-max": "1440px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "stack-lg": "32px"
+            },
+            "fontFamily": {
+                    "headline-xl": ["Sora"],
+                    "headline-lg": ["Sora"],
+                    "body-md": ["DM Sans"],
+                    "headline-md": ["Sora"],
+                    "headline-lg-mobile": ["Sora"],
+                    "body-lg": ["DM Sans"],
+                    "technical-data": ["DM Sans"],
+                    "label-caps": ["Sora"]
+            },
+            "fontSize": {
+                    "headline-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "technical-data": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            scroll-behavior: smooth;
+        }
+
+        .glow-sm:hover {
+            box-shadow: 0 0 20px rgba(239, 28, 37, 0.15);
+        }
+
+        .project-card-overlay {
+            background: linear-gradient(to top, rgba(18, 18, 18, 0.9) 0%, rgba(18, 18, 18, 0.2) 50%, transparent 100%);
+            opacity: 0.8;
+            transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-card:hover .project-card-overlay {
+            opacity: 0.4;
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+
+        .technical-divider {
+            height: 1px;
+            background: linear-gradient(90deg, #343436 0%, transparent 100%);
+        }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .active-dot {
+            width: 4px;
+            height: 4px;
+            background-color: #EF1C25;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="bg-surface-container-low dark:bg-surface-container-low docked full-width top-0 sticky z-50 border-b border-surface-variant">
+<div class="flex justify-between items-center h-20 w-full px-6 lg:px-24 max-w-[1440px] mx-auto">
+<div class="font-headline-md text-headline-md font-bold tracking-tight text-on-surface">
+                Last Chance Lighting
+            </div>
+<!-- Desktop Links -->
+<div class="hidden md:flex gap-stack-lg items-center">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" href="#">Products</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-body-md text-body-md" href="#">Our Projects</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" href="#">About Us</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" href="#">Contact Us</a>
+</div>
+<button class="bg-[#EF1C25] text-[#F5F5F3] px-6 py-3 rounded-lg font-bold hover:bg-[#C9141C] hover:shadow-[0_0_20px_rgba(255,75,83,0.3)] transition-all duration-300 active:scale-95">
+                Request a Quote
+            </button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[614px] flex items-center pt-20 px-6 lg:px-24 max-w-[1440px] mx-auto">
+<div class="absolute inset-0 z-0 overflow-hidden opacity-30">
+
+</div>
+<div class="relative z-10 max-w-3xl">
+<span class="font-label-caps text-label-caps text-primary tracking-[0.2em] mb-4 block uppercase">The Portfolio</span>
+<h1 class="font-headline-xl text-headline-xl lg:text-headline-xl text-on-surface mb-6 leading-none">
+                    Our Projects
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                    A collection of spaces transformed by technical precision and luxury illumination. We partner with visionaries to redefine the perception of space through light.
+                </p>
+<div class="mt-12 h-px w-32 bg-primary"></div>
+</div>
+</section>
+<!-- Project Grid -->
+<section class="py-section-gap px-6 lg:px-24 max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Large Featured: Family Residence -->
+<div class="md:col-span-12 lg:col-span-8">
+<div class="group relative overflow-hidden rounded-xl bg-surface-container border border-surface-variant project-card aspect-[16/9]">
+<div class="absolute inset-0 project-image transition-transform duration-700 bg-cover bg-center" data-alt="A luxurious minimalist family residence interior at dusk, featuring dramatic architectural lighting. High ceilings with recessed magnetic track lighting highlighting a monolithic black marble fireplace. Large floor-to-ceiling windows reflect subtle red light-leaks. The scene is sophisticated, quiet, and uses deep obsidian and warm grey tones typical of the Last Chance Lighting technical luxury brand." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDMHy42724Q3fLjsTp3BIgdZ-kQbbcotQ_5gJZModREe34V4jTWLKRbs5GpueyhQiQlJrbM6oTeaTIw452wUDFwFBO_VTr5ppQzs9RrGFQtq031TMrZPLvJtre2x_i77-oGST4MqlhbDhCbhfbDzOUm6zfHtSvZT9iuOTvePxWw4TsCLkBkE9VTmF8oMMNru9EE88LeRYKaFwUlEynGzfMYlL9_-VLQNCxDjQNYHcyvrkTExIAMkzXo_Q')">
+</div>
+<div class="absolute inset-0 project-card-overlay"></div>
+<div class="absolute inset-0 flex flex-col justify-end p-8 lg:p-12">
+<div class="mb-4">
+<span class="px-3 py-1 border border-primary text-primary font-label-caps text-[10px] rounded-sm bg-surface-container-lowest/50 backdrop-blur-md">RESIDENTIAL</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2">Family Residence</h3>
+<p class="font-body-md text-on-surface-variant max-w-md mb-6">A study in atmospheric intimacy, utilizing linear light paths and warm kelvin temperatures to anchor a modern minimalist estate.</p>
+<a class="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all" href="#">
+                                View Project <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Secondary: Office Upgrade -->
+<div class="md:col-span-6 lg:col-span-4">
+<div class="group relative overflow-hidden rounded-xl bg-surface-container border border-surface-variant project-card h-full min-h-[500px]">
+<div class="absolute inset-0 project-image transition-transform duration-700 bg-cover bg-center" data-alt="A modern tech office workspace with sophisticated technical lighting. Suspended acoustic baffles integrated with ultra-slim linear LED pendants. The color palette is dark charcoal and industrial grey, with sharp focus lighting on workstations. High-contrast, clean lines, and a professional, quiet atmosphere consistent with Last Chance Lighting's luxury-minimalist aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDY33t7uPdc37pwr7VeUXQXffuSPi1d32yF1enguT6ttqWzUVbV5Ykye3ixW7dhXyy-Lrn1CrNBKwAgYB-Mf6_v-9MbZCGFVhE8ODfuvrZpAT1hkN8Y8VFeM8k_wfhSLjLsUwmNuTVjyTQyidN2MjisuXJD66h-Q6oJxeCauzXCxT-Lyg7EMlkKiCJIxoVr8qQXzgq_DhqoZQa4DZe3c6cFYp3iMt5mvHdjYZSDSQ-4FTSXQgCjhsyp2Q')">
+</div>
+<div class="absolute inset-0 project-card-overlay"></div>
+<div class="absolute inset-0 flex flex-col justify-end p-8">
+<div class="mb-4">
+<span class="px-3 py-1 border border-primary text-primary font-label-caps text-[10px] rounded-sm bg-surface-container-lowest/50 backdrop-blur-md">COMMERCIAL</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Office Upgrade</h3>
+<p class="font-body-md text-on-surface-variant mb-6">Precise task lighting meets architectural flair in this high-tech corporate headquarters.</p>
+<a class="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all" href="#">
+                                View Project <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Tertiary: Showroom -->
+<div class="md:col-span-6 lg:col-span-4">
+<div class="group relative overflow-hidden rounded-xl bg-surface-container border border-surface-variant project-card h-full min-h-[500px]">
+<div class="absolute inset-0 project-image transition-transform duration-700 bg-cover bg-center" data-alt="A high-end luxury fashion showroom featuring specialized gallery-grade spotlighting. The floor is polished concrete, walls are dark charcoal. Spotlights with narrow beams precisely illuminate mannequins, creating sharp shadows and high-drama. The mood is expensive and exclusive, accented by soft red glow effects in the peripheries." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDoV0pzVk9c1W05zEflfPvNoYL4ePIRsu7lPyxF0uuysSxephIdUKQWLZCwWSTvLCxBFqM_sNTtxktVBqvNnPwC_oS-ah2CfKbT7DqBQBMGq57B9b6Cq2TPkfP2znI6q3C4wnc_nSjJ4hc-mpGgGfhY8BzD2NevrlmX1yrai5TIgMdx-hKz0jmEzdp5m_965KEFFyNlp2ceafOsZG6QfhjWUhKzvbUD7SxQfT_FgMmV6vXvS2dUFjK3aQ')">
+</div>
+<div class="absolute inset-0 project-card-overlay"></div>
+<div class="absolute inset-0 flex flex-col justify-end p-8">
+<div class="mb-4">
+<span class="px-3 py-1 border border-primary text-primary font-label-caps text-[10px] rounded-sm bg-surface-container-lowest/50 backdrop-blur-md">RETAIL</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Showroom</h3>
+<p class="font-body-md text-on-surface-variant mb-6">Curated light scenes designed to elevate product silhouettes and create a gallery-esque retail experience.</p>
+<a class="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all" href="#">
+                                View Project <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Bento Grid Style: Hospitality -->
+<div class="md:col-span-12 lg:col-span-8">
+<div class="group relative overflow-hidden rounded-xl bg-surface-container border border-surface-variant project-card aspect-[21/9]">
+<div class="absolute inset-0 project-image transition-transform duration-700 bg-cover bg-center" data-alt="An upscale fine-dining restaurant at night. The lighting is extremely moody and focused, with miniature pin-hole spotlights on each table. Cove lighting along textured dark walls provides a soft architectural glow. The atmosphere is seductive and premium, with a palette of deep reds, blacks, and bronzes, showcasing technical luxury lighting control." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuChS-m8fgqXEZalrDxkxTaS3vizIebnHIACSVTzKQ8VFI6eOGT8pmJ5j07j5X8Z-EsExcN8hkVjmLaFIpLpa5P9mplUvLn3kw76zg2ZgU4G8bcBUS1J6EvDg48QG62mb6CCLHiLabuAyv1KFsqRNDb0_HB1dEdt0BthUP747Auv4yxr3tbZ-g_9i61twZxqaTNPDxPPHln61B48YGwsq38bZu5WY21XBVORbri80vT-j40W3C505gozcw')">
+</div>
+<div class="absolute inset-0 project-card-overlay"></div>
+<div class="absolute inset-0 flex flex-col justify-end p-8 lg:p-12">
+<div class="mb-4">
+<span class="px-3 py-1 border border-primary text-primary font-label-caps text-[10px] rounded-sm bg-surface-container-lowest/50 backdrop-blur-md">HOSPITALITY</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2">Restaurant</h3>
+<p class="font-body-md text-on-surface-variant max-w-md mb-6">Seductive, low-glare lighting solutions that prioritize comfort while accentuating design textures.</p>
+<a class="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all" href="#">
+                                View Project <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Last Grid Item: Outdoor -->
+<div class="md:col-span-12">
+<div class="group relative overflow-hidden rounded-xl bg-surface-container border border-surface-variant project-card aspect-[21/7] min-h-[400px]">
+<div class="absolute inset-0 project-image transition-transform duration-700 bg-cover bg-center" data-alt="Modern landscape architecture featuring IP65 rated outdoor architectural lighting. Sleek bollards and recessed ground uplights illuminate a minimalist garden path with structural plants and geometric concrete walls. The midnight sky creates a sharp contrast with the crisp, technical white and warm light beams. A sophisticated, expensive outdoor scene in a luxury setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBBqQeh7eaXRUdRPgY5Pzduuo-Egr7AiUn_bMNNVjm8NQ7G7LubZ6AAgtsknTzZJ-xSJEKz4FhsQf7uFVO9HcbOx65nUqZD2mA_WhD2Fi5xQgeGGYQ03S0MYCfmUcJJOt9nzoa4VbR9qcJfTfVQeXTZ_SV40YLgrzqHZa7QEFGSFA2SRGNtTOhZ09EmhoibHPpVX75f347s-QEEBGvPqcr9K4avFfG7bW-ZC7MpJ4sMeO0xkgZnnETanA')">
+</div>
+<div class="absolute inset-0 project-card-overlay"></div>
+<div class="absolute inset-0 flex flex-col justify-center items-center p-8 text-center">
+<div class="mb-4">
+<span class="px-3 py-1 border border-primary text-primary font-label-caps text-[10px] rounded-sm bg-surface-container-lowest/50 backdrop-blur-md">OUTDOOR</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2">Landscape</h3>
+<p class="font-body-md text-on-surface-variant max-w-2xl mb-8">Engineering light for the elements. Precision IP65-rated systems that transform architectural exteriors into midnight masterpieces.</p>
+<a class="bg-[#EF1C25] text-[#F5F5F3] px-8 py-4 rounded-lg font-bold hover:bg-[#C9141C] hover:shadow-[0_0_20px_rgba(255,75,83,0.3)] transition-all duration-300" href="#">
+                                View All Landscape Projects
+                            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-section-gap px-6 lg:px-24 bg-surface-container-lowest border-t border-surface-variant overflow-hidden relative">
+<div class="absolute -right-64 -top-64 w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full"></div>
+<div class="max-w-[1440px] mx-auto flex flex-col lg:flex-row justify-between items-center gap-stack-lg relative z-10">
+<div class="text-center lg:text-left max-w-2xl">
+<h2 class="font-headline-xl text-headline-xl text-on-surface mb-4">Have a Project in Mind?</h2>
+<p class="font-body-lg text-on-surface-variant">
+                        Our technical consultants are ready to collaborate on your next architectural vision. Let's design the perfect light environment together.
+                    </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-stack-md shrink-0">
+<button class="bg-[#EF1C25] text-[#F5F5F3] px-10 py-5 rounded-lg font-bold hover:bg-[#C9141C] hover:shadow-[0_0_30px_rgba(255,75,83,0.4)] transition-all duration-300 text-lg">
+                        Discuss Your Project
+                    </button>
+<button class="border border-surface-variant text-on-surface px-10 py-5 rounded-lg font-bold hover:border-primary transition-all duration-300 text-lg">
+                        Download Portfolio
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-surface-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-section-gap px-6 lg:px-24 py-20 max-w-[1440px] mx-auto">
+<div class="col-span-1 md:col-span-2">
+<div class="font-headline-md text-headline-md font-bold text-on-surface mb-6">Last Chance Lighting</div>
+<p class="text-on-surface-variant max-w-sm mb-8 font-body-md">
+                    Pioneering technical luxury in architectural illumination. Bridging the gap between engineering precision and aesthetic grandeur.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 border border-surface-variant flex items-center justify-center rounded-lg text-on-surface-variant hover:text-primary hover:border-primary transition-all" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="w-10 h-10 border border-surface-variant flex items-center justify-center rounded-lg text-on-surface-variant hover:text-primary hover:border-primary transition-all" href="#">
+<span class="material-symbols-outlined">alternate_email</span>
+</a>
+<a class="w-10 h-10 border border-surface-variant flex items-center justify-center rounded-lg text-on-surface-variant hover:text-primary hover:border-primary transition-all" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface mb-6 uppercase tracking-widest">Resources</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-on-surface font-body-md transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface font-body-md transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface font-body-md transition-colors" href="#">Shipping &amp; Returns</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface font-body-md transition-colors" href="#">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface mb-6 uppercase tracking-widest">Technical</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-on-surface font-body-md transition-colors" href="#">Photometric Data</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface font-body-md transition-colors" href="#">Installation Guides</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface font-body-md transition-colors" href="#">Warranty Info</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface font-body-md transition-colors" href="#">Partner Portal</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-surface-variant/30 py-8 px-6 lg:px-24 max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-center">
+<p class="text-on-surface-variant text-sm font-body-md opacity-80">
+                © 2024 Last Chance Lighting (Pvt) Ltd. All rights reserved.
+            </p>
+<div class="flex items-center gap-2">
+<span class="active-dot"></span>
+<span class="text-on-surface-variant text-sm font-label-caps uppercase tracking-tighter">Live Support Available</span>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const badge = card.querySelector('span');
+                if (badge) badge.classList.add('border-primary');
+            });
+        });
+
+        // Simple parallax effect on hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('h1');
+            if(hero) {
+                hero.style.transform = `translateY(${scrolled * 0.15}px)`;
+                hero.style.opacity = 1 - (scrolled / 600);
+            }
+        });
+    </script>
+</body></html>
