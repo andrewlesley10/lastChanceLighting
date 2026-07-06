@@ -1,0 +1,24 @@
+# Remove .html and .php extensions from URLs
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  
+  # Redirect .html to non-.html version
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^\ ]+)\.html
+  RewriteRule ^([^\.]+)\.html$ /$1 [R=301,L]
+  
+  # Redirect .php to non-.php version
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^\ ]+)\.php
+  RewriteRule ^([^\.]+)\.php$ /$1 [R=301,L]
+  
+  # Rewrite requests to .html files
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !\.php$
+  RewriteRule ^([^\.]+)$ $1.html [NC,L]
+  
+  # Rewrite POST requests to .php files
+  RewriteCond %{REQUEST_METHOD} ^POST$
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^([^\.]+)$ $1.php [NC,L]
+</IfModule>
