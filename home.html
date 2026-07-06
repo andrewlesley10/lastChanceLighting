@@ -138,20 +138,20 @@
 <body class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
 <!-- TopNavBar -->
 <header class="bg-surface-container-low dark:bg-surface-container-low docked full-width top-0 sticky z-50 border-b border-surface-variant h-20 transition-all duration-300">
-<div class="flex justify-between items-center h-full w-full px-6 lg:px-24 max-w-[1440px] mx-auto">
-<a href="home.html" class="flex items-center h-16">
-                <img src="logo.png" alt="Last Chance Lighting" class="h-16 w-auto object-contain">
+<div class="flex justify-between items-center h-full w-full px-4 sm:px-6 lg:px-24 max-w-[1440px] mx-auto">
+<a href="home.html" class="flex items-center h-12 sm:h-16">
+                <img src="logo.png" alt="Last Chance Lighting" class="h-12 sm:h-16 w-auto object-contain">
             </a>
 <!-- Desktop Nav -->
 <nav class="hidden md:flex gap-8 items-center h-full">
-<a class="text-primary border-b-2 border-primary pb-1 font-body-md text-body-md hover:glow-sm transition-all duration-300 active:scale-95" href="home.html">Home</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:glow-sm transition-all duration-300 active:scale-95" href="products.html">Products</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:glow-sm transition-all duration-300 active:scale-95" href="projects.html">Our Projects</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:glow-sm transition-all duration-300 active:scale-95" href="about.html">About Us</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:glow-sm transition-all duration-300 active:scale-95" href="contact.html">Contact Us</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-body-md text-body-md hover:glow-sm transition-all duration-300 active:scale-95" href="/">Home</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:glow-sm transition-all duration-300 active:scale-95" href="/products">Products</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:glow-sm transition-all duration-300 active:scale-95" href="/projects">Our Projects</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:glow-sm transition-all duration-300 active:scale-95" href="/about">About Us</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:glow-sm transition-all duration-300 active:scale-95" href="/contact">Contact Us</a>
 </nav>
 <div class="flex items-center gap-3">
-<a class="hidden md:inline-flex bg-primary-container text-on-primary-container px-6 py-2.5 rounded-lg font-label-caps text-label-caps uppercase tracking-widest active:scale-95 transition-all duration-200 hover:glow-sm" href="contact.html">
+<a class="hidden md:inline-flex bg-primary-container text-on-primary-container px-6 py-2.5 rounded-lg font-label-caps text-label-caps uppercase tracking-widest active:scale-95 transition-all duration-200 hover:glow-sm" href="/contact">
                 Request a Quote
             </a>
 <button class="md:hidden inline-flex h-12 w-12 items-center justify-center rounded-lg border border-surface-variant text-on-surface transition-colors hover:bg-surface-variant" id="mobile-menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-nav-panel">
@@ -161,53 +161,53 @@
 </div>
 <div class="md:hidden hidden border-t border-surface-variant bg-surface-container-low" id="mobile-nav-panel">
 <nav class="flex flex-col gap-2 px-6 py-4">
-<a class="rounded-lg px-4 py-3 text-on-surface-variant transition-colors hover:bg-surface-variant hover:text-on-surface" href="home.html">Home</a>
-<a class="rounded-lg px-4 py-3 text-on-surface-variant transition-colors hover:bg-surface-variant hover:text-on-surface" href="products.html">Products</a>
-<a class="rounded-lg px-4 py-3 text-on-surface-variant transition-colors hover:bg-surface-variant hover:text-on-surface" href="projects.html">Our Projects</a>
-<a class="rounded-lg px-4 py-3 text-on-surface-variant transition-colors hover:bg-surface-variant hover:text-on-surface" href="about.html">About Us</a>
-<a class="rounded-lg px-4 py-3 text-primary" href="contact.html">Contact Us</a>
-<a class="mt-2 rounded-lg bg-primary px-4 py-3 text-center font-label-caps text-label-caps uppercase tracking-widest text-on-primary" href="contact.html">Request a Quote</a>
+<a class="rounded-lg px-4 py-3 text-on-surface-variant transition-colors hover:bg-surface-variant hover:text-on-surface" href="/">Home</a>
+<a class="rounded-lg px-4 py-3 text-on-surface-variant transition-colors hover:bg-surface-variant hover:text-on-surface" href="/products">Products</a>
+<a class="rounded-lg px-4 py-3 text-on-surface-variant transition-colors hover:bg-surface-variant hover:text-on-surface" href="/projects">Our Projects</a>
+<a class="rounded-lg px-4 py-3 text-on-surface-variant transition-colors hover:bg-surface-variant hover:text-on-surface" href="/about">About Us</a>
+<a class="rounded-lg px-4 py-3 text-primary" href="/contact">Contact Us</a>
+<a class="mt-2 rounded-lg bg-primary px-4 py-3 text-center font-label-caps text-label-caps uppercase tracking-widest text-on-primary" href="/contact">Request a Quote</a>
 </nav>
 </div>
 </header>
 <main>
 <!-- Hero Carousel Section -->
-<section class="relative h-[calc(100vh-80px)] overflow-hidden bg-black">
+<section class="relative min-h-[75vh] sm:h-[calc(100vh-80px)] overflow-hidden bg-black">
 <div class="flex transition-transform duration-700 ease-in-out h-full w-[400%]" id="hero-slider">
 <!-- Slide 1: Residential -->
 <div class="w-1/4 h-full relative group">
 <div class="absolute inset-0 bg-cover bg-center animate-zoom" data-alt="A luxurious minimalist living room at dusk with technical architectural lighting. Sleek warm LED strips highlight the sharp concrete edges and dark wood textures. The atmosphere is sophisticated and quiet, with a single deep red accent light illuminating a high-end sculptural chair in the corner. High-contrast architectural photography." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAYBo2M_rtYKG5KLrnU-EnxjA_zXu30SE7qLrIc7xAMgtxjaRL8m9z2ZvnVNVuYYfBIU2xESz3FIpWiFufmYKsPFpQgcem4GVFEmZDsTR_Lpv2IldptsYWjxNVtSrru9iK3iujbk-iUj5NOAbPCMWMUuYInbE9Vj6hHhARh6IzFZdbInHMhhXgIsF3LLDuLqwkd4bCiZxC_zzdf4PEQHYEr-RynE-LLFTwj4K82UXaCo9tMdOMKisHxsg')"></div>
-<div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent opacity-80"></div>
-<div class="absolute inset-0 flex flex-col justify-center items-start px-6 lg:px-24 max-w-[1440px] mx-auto z-10">
-<span class="text-primary font-label-caps text-label-caps tracking-[0.2em] mb-4">RESIDENTIAL</span>
-<h1 class="font-headline-xl text-headline-xl mb-6 max-w-2xl">Elevating the Art of Living</h1>
+<div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-[#121212]/40 to-transparent opacity-90"></div>
+<div class="absolute inset-0 flex flex-col justify-center items-start px-4 sm:px-6 lg:px-24 max-w-[1440px] mx-auto z-10 py-12 sm:py-0">
+<span class="text-primary font-label-caps text-[10px] sm:text-label-caps tracking-[0.2em] mb-2 sm:mb-4">RESIDENTIAL</span>
+<h1 class="font-headline-xl text-2xl sm:text-4xl lg:text-headline-xl mb-4 sm:mb-6 max-w-xl sm:max-w-2xl leading-tight">Elevating the Art of Living</h1>
 </div>
 </div>
 <!-- Slide 2: Commercial -->
 <div class="w-1/4 h-full relative group">
 <div class="absolute inset-0 bg-cover bg-center animate-zoom" data-alt="A wide angle shot of a futuristic corporate lobby with massive glass panels and black marble floors. Linear architectural lighting fixtures trace the ceiling in perfect geometric patterns. The lighting is crisp, cold white with subtle red light leaks reflecting off the polished dark surfaces. Minimalist, premium, technical luxury aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDh_S4YvzX0y97F4YsQiNB8_k1Txoo4T7CxLa570eUdBV0FpIulRG0nkXXT89aLXs-7Oy84xkZbIcsTI82mxpKT181SpaV3ue-7IIn-NpT34TJGr0z4LcfVUJ1zNLuimJZ0RNU0wsPBsQVc8sMnRWfj5UzEcI-6jJHDo4sU0GLc5fBheyEgYEeWxHiOanziPY8bWqQY4QNsL715wix6nf3dmEYG5nTyn095sTIlxwnCeGQisGIJ3ZCVbA')"></div>
-<div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent opacity-80"></div>
-<div class="absolute inset-0 flex flex-col justify-center items-start px-6 lg:px-24 max-w-[1440px] mx-auto z-10">
-<span class="text-primary font-label-caps text-label-caps tracking-[0.2em] mb-4">COMMERCIAL</span>
-<h1 class="font-headline-xl text-headline-xl mb-6 max-w-2xl">Defining Modern Workspace</h1>
+<div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-[#121212]/40 to-transparent opacity-90"></div>
+<div class="absolute inset-0 flex flex-col justify-center items-start px-4 sm:px-6 lg:px-24 max-w-[1440px] mx-auto z-10 py-12 sm:py-0">
+<span class="text-primary font-label-caps text-[10px] sm:text-label-caps tracking-[0.2em] mb-2 sm:mb-4">COMMERCIAL</span>
+<h1 class="font-headline-xl text-2xl sm:text-4xl lg:text-headline-xl mb-4 sm:mb-6 max-w-xl sm:max-w-2xl leading-tight">Defining Modern Workspace</h1>
 </div>
 </div>
 <!-- Slide 3: Outdoor -->
 <div class="w-1/4 h-full relative group">
 <div class="absolute inset-0 bg-cover bg-center animate-zoom" data-alt="An ultra-modern villa exterior at night. Precision landscape lighting grazes textured stone walls and illuminates architectural plants from below. The lighting creates dramatic long shadows on the dark obsidian exterior. Controlled spotlights emphasize the building's geometry with clinical precision. High-end luxury real estate photography." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBG7qIVVAXbkPbyisuDmHSTnpaDkqh8K615OJzOvjcZLImnISSy1cfpYHFgFa-VGiMbcIfs0ZSULgTRwn0XcVv_ObLa9xLhT2cSGe4WVCzCBSSguLHfVO7eJm5nePsW58BUVvECR0TpOhBPyKxwlQSlDKVMZ1p-Brt_fb2QBdELL6gIktOkk8YqTVaMXI_CnMZlrNyX9EtorS3oRBrWVXspwMyeRVeZCAVD7KGB89TvV1UxpWi5ddhN4Q')"></div>
-<div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent opacity-80"></div>
-<div class="absolute inset-0 flex flex-col justify-center items-start px-6 lg:px-24 max-w-[1440px] mx-auto z-10">
-<span class="text-primary font-label-caps text-label-caps tracking-[0.2em] mb-4">OUTDOOR</span>
-<h1 class="font-headline-xl text-headline-xl mb-6 max-w-2xl">Sculpting Space with Light</h1>
+<div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-[#121212]/40 to-transparent opacity-90"></div>
+<div class="absolute inset-0 flex flex-col justify-center items-start px-4 sm:px-6 lg:px-24 max-w-[1440px] mx-auto z-10 py-12 sm:py-0">
+<span class="text-primary font-label-caps text-[10px] sm:text-label-caps tracking-[0.2em] mb-2 sm:mb-4">OUTDOOR</span>
+<h1 class="font-headline-xl text-2xl sm:text-4xl lg:text-headline-xl mb-4 sm:mb-6 max-w-xl sm:max-w-2xl leading-tight">Sculpting Space with Light</h1>
 </div>
 </div>
 <!-- Slide 4: Construction -->
 <div class="w-1/4 h-full relative group">
 <div class="absolute inset-0 bg-cover bg-center animate-zoom" data-alt="A technical cross-section of a high-end construction project showing integrated smart lighting systems. Bare concrete walls meet futuristic recessed light channels. The mood is industrial-lux, focused on technical precision and engineering. Deep shadows contrasted with sharp blades of red and white light. Architects office vibes." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB4canL5ZycBJyuALm3Pp1nZFuzyy-bIYbmnFOOuiSRVaRjvPxfGEcyYAd8wqMt39VCvyeEVZzevrz1NFvCgwqGeQa1nlY5qA4nc9-XJCsMlRsfSAVZQXyEz9AW4pFN4ajSvDTVL71HV81WITcK48jz0Ykz9duQ9arcrAgJAyuXXW_mSXuL29YaDc3vFF29viSRv5TM9NZxavHBA-uJ846Z8Cs7atbNuKu2w_xd8T_bOuigWlqagmrZJA')"></div>
-<div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent opacity-80"></div>
-<div class="absolute inset-0 flex flex-col justify-center items-start px-6 lg:px-24 max-w-[1440px] mx-auto z-10">
-<span class="text-primary font-label-caps text-label-caps tracking-[0.2em] mb-4">CONSTRUCTION</span>
-<h1 class="font-headline-xl text-headline-xl mb-6 max-w-2xl">Precision Engineering at Scale</h1>
+<div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-[#121212]/40 to-transparent opacity-90"></div>
+<div class="absolute inset-0 flex flex-col justify-center items-start px-4 sm:px-6 lg:px-24 max-w-[1440px] mx-auto z-10 py-12 sm:py-0">
+<span class="text-primary font-label-caps text-[10px] sm:text-label-caps tracking-[0.2em] mb-2 sm:mb-4">CONSTRUCTION</span>
+<h1 class="font-headline-xl text-2xl sm:text-4xl lg:text-headline-xl mb-4 sm:mb-6 max-w-xl sm:max-w-2xl leading-tight">Precision Engineering at Scale</h1>
 </div>
 </div>
 </div>
@@ -220,16 +220,16 @@
 </div>
 </section>
 <!-- Intro Section -->
-<section class="py-section-gap px-6 lg:px-24 max-w-[1440px] mx-auto text-center">
-<h2 class="font-headline-lg text-headline-lg mb-4">More Than Lights.</h2>
+<section class="py-16 sm:py-section-gap px-4 sm:px-6 lg:px-24 max-w-[1440px] mx-auto text-center">
+<h2 class="font-headline-lg text-3xl sm:text-headline-lg mb-4">More Than Lights.</h2>
 <h3 class="font-headline-md text-headline-md text-primary mb-8">Complete Lighting Solutions.</h3>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">
                 We bridge the gap between architectural vision and technical reality. Last Chance Lighting provides precision-engineered lighting systems that define space, evoke emotion, and deliver performance.
             </p>
 </section>
 <!-- Core Services -->
-<section class="py-section-gap px-6 lg:px-24 max-w-[1440px] mx-auto">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<section class="py-16 sm:py-section-gap px-4 sm:px-6 lg:px-24 max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-gutter">
 <!-- Residential -->
 <div class="bg-[#252527] rounded-xl border border-[#343436] p-stack-lg group hover:border-primary transition-all duration-500 overflow-hidden relative">
 <div class="red-glow-spotlight absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -257,8 +257,8 @@
 </div>
 </section>
 <!-- Product Categories -->
-<section class="py-section-gap px-6 lg:px-24 max-w-[1440px] mx-auto">
-<div class="flex justify-between items-end mb-12">
+<section class="py-16 sm:py-section-gap px-4 sm:px-6 lg:px-24 max-w-[1440px] mx-auto">
+<div class="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 mb-12">
 <div>
 <span class="text-primary font-label-caps text-label-caps">COLLECTIONS</span>
 <h2 class="font-headline-lg text-headline-lg mt-2">Product Categories</h2>
@@ -317,8 +317,8 @@
 </div>
 </section>
 <!-- Why Choose Us -->
-<section class="py-section-gap bg-surface-container-low">
-<div class="px-6 lg:px-24 max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<section class="py-16 sm:py-section-gap bg-surface-container-low">
+<div class="px-4 sm:px-6 lg:px-24 max-w-[1440px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-gutter">
 <div class="flex flex-col gap-4">
 <div class="text-primary font-headline-xl text-headline-xl">01</div>
 <h5 class="font-headline-md text-headline-md">Quality</h5>
@@ -342,9 +342,9 @@
 </div>
 </section>
 <!-- Testimonials -->
-<section class="py-section-gap px-6 lg:px-24 max-w-[1440px] mx-auto">
+<section class="py-16 sm:py-section-gap px-4 sm:px-6 lg:px-24 max-w-[1440px] mx-auto">
 <h2 class="font-headline-lg text-headline-lg mb-16 text-center">What Our Clients Say</h2>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-gutter">
 <!-- Nadeesha -->
 <div class="bg-[#252527] p-8 rounded-xl border border-[#343436] flex flex-col gap-6">
 <div class="flex gap-1 text-[#EF1C25]">
@@ -359,7 +359,6 @@
 <div class="w-12 h-12 rounded-full bg-surface-variant border border-[#343436] flex items-center justify-center text-primary font-bold">N</div>
 <div>
 <p class="font-bold">Nadeesha Perera</p>
-<p class="text-sm text-on-surface-variant">Lead Architect, NP Designs</p>
 </div>
 </div>
 </div>
@@ -377,7 +376,6 @@
 <div class="w-12 h-12 rounded-full bg-surface-variant border border-[#343436] flex items-center justify-center text-primary font-bold">K</div>
 <div>
 <p class="font-bold">Kasun Jayawardena</p>
-<p class="text-sm text-on-surface-variant">Director, Prime Retail Group</p>
 </div>
 </div>
 </div>
@@ -395,15 +393,14 @@
 <div class="w-12 h-12 rounded-full bg-surface-variant border border-[#343436] flex items-center justify-center text-primary font-bold">S</div>
 <div>
 <p class="font-bold">Shehan Silva</p>
-<p class="text-sm text-on-surface-variant">Senior Engineer, Metro Build</p>
 </div>
 </div>
 </div>
 </div>
 </section>
 <!-- Featured Projects -->
-<section class="py-section-gap px-6 lg:px-24 max-w-[1440px] mx-auto">
-<div class="flex justify-between items-center mb-12">
+<section class="py-16 sm:py-section-gap px-4 sm:px-6 lg:px-24 max-w-[1440px] mx-auto">
+<div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-12">
 <h2 class="font-headline-lg text-headline-lg">Featured Projects</h2>
 <button class="border border-[#343436] px-6 py-2 rounded hover:border-primary transition-all">View All Work</button>
 </div>
@@ -437,21 +434,21 @@
 <!-- Final CTA -->
 <section class="py-24 relative overflow-hidden">
 
-<div class="relative z-10 px-6 lg:px-24 max-w-[1440px] mx-auto text-center bg-[#121212]/80 backdrop-blur-sm py-16 rounded-3xl border border-[#343436]">
+<div class="relative z-10 px-4 sm:px-6 lg:px-24 max-w-[1440px] mx-auto text-center bg-[#121212]/80 backdrop-blur-sm py-12 sm:py-16 rounded-3xl border border-[#343436]">
 <h2 class="font-headline-xl text-headline-xl mb-6">Ready to Brighten Your Space?</h2>
 <p class="text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">Consult with our lighting engineers to develop a custom solution for your project. From technical specs to aesthetic perfection, we deliver.</p>
 <div class="flex flex-col sm:flex-row gap-6 justify-center">
-<a href="contact.html" class="bg-[#C9141C] text-[#F5F5F3] px-10 py-4 rounded-lg font-headline-md text-headline-md hover:bg-[#A10F14] transition-all hover:shadow-[0_0_20px_rgba(255,75,83,0.4)] active:scale-95 inline-block">Request a Quote</a>
-<a href="projects.html" class="border border-[#343436] text-on-surface px-10 py-4 rounded-lg font-headline-md text-headline-md hover:border-primary transition-all active:scale-95 inline-block">Our Projects</a>
+<a href="/contact" class="bg-[#C9141C] text-[#F5F5F3] px-10 py-4 rounded-lg font-headline-md text-headline-md hover:bg-[#A10F14] transition-all hover:shadow-[0_0_20px_rgba(255,75,83,0.4)] active:scale-95 inline-block">Request a Quote</a>
+<a href="/projects" class="border border-[#343436] text-on-surface px-10 py-4 rounded-lg font-headline-md text-headline-md hover:border-primary transition-all active:scale-95 inline-block">Our Projects</a>
 </div>
 </div>
 </section>
 </main>
 <!-- Footer -->
 <footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-surface-variant">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-section-gap px-6 lg:px-24 py-20 max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-section-gap px-4 sm:px-6 lg:px-24 py-12 sm:py-20 max-w-[1440px] mx-auto">
 <div class="md:col-span-1">
-<a href="home.html" class="inline-block mb-6">
+<a href="/" class="inline-block mb-6">
   <img src="logo.png" alt="Last Chance Lighting" class="h-20 w-auto object-contain">
 </a>
 <p class="text-on-surface-variant font-body-md mb-8">Specialized architectural lighting for those who value the intersection of form and function.</p>
@@ -473,23 +470,23 @@
 <div class="md:col-span-1">
 <h4 class="font-label-caps text-label-caps text-primary mb-6 uppercase tracking-widest">Company</h4>
 <ul class="space-y-4">
-<li><a class="text-primary underline" href="home.html">Home</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="products.html">Products</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="projects.html">Our Projects</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="about.html">About Us</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="contact.html">Contact Us</a></li>
+<li><a class="text-primary underline" href="/">Home</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="/products">Products</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="/projects">Our Projects</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="/about">About Us</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="/contact">Contact Us</a></li>
 </ul>
 </div>
 <div class="md:col-span-1">
 <h4 class="font-label-caps text-label-caps text-primary mb-6 uppercase tracking-widest">Contact</h4>
 <ul class="space-y-4 text-on-surface-variant">
 <li class="flex items-center gap-3"><span class="material-symbols-outlined text-sm">mail</span> info@lastchancelighting.lk</li>
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-sm">call</span> +1 (800) LUX-LITE</li>
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-sm">location_on</span> Design District, New York, NY</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-sm">call</span> +94707071010</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-sm">location_on</span> 335A, Galle Road, Colombo 03, Sri Lanka</li>
 </ul>
 </div>
 </div>
-<div class="px-6 lg:px-24 py-8 border-t border-surface-variant/50 max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="px-4 sm:px-6 lg:px-24 py-8 border-t border-surface-variant/50 max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
 <span class="text-on-surface-variant font-label-caps text-[10px] opacity-80 hover:opacity-100 transition-opacity">© 2024 Last Chance Lighting (Pvt) Ltd. All rights reserved.</span>
 <div class="flex gap-8">
 <a class="text-on-surface-variant font-label-caps text-[10px] uppercase hover:text-on-surface" href="#">Shipping &amp; Returns</a>

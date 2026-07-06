@@ -145,9 +145,9 @@
 <body class="font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container">
 <!-- TopNavBar -->
 <header class="bg-surface-container-low dark:bg-surface-container-low docked full-width top-0 sticky z-50 border-b border-surface-variant">
-<div class="flex justify-between items-center h-20 w-full px-6 lg:px-24 max-w-[1440px] mx-auto">
-<a href="home.html" class="flex items-center h-16">
-  <img src="logo.png" alt="Last Chance Lighting" class="h-16 w-auto object-contain">
+<div class="flex justify-between items-center h-20 w-full px-4 sm:px-6 lg:px-24 max-w-[1440px] mx-auto">
+<a href="/" class="flex items-center h-12 sm:h-16">
+  <img src="logo.png" alt="Last Chance Lighting" class="h-12 sm:h-16 w-auto object-contain">
 </a>
 <nav class="hidden md:flex items-center gap-stack-lg">
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors hover:text-primary hover:glow-sm transition-all duration-300" href="home.html">Home</a>
@@ -157,7 +157,7 @@
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors hover:text-primary hover:glow-sm transition-all duration-300" href="contact.html">Contact Us</a>
 </nav>
 <div class="flex items-center gap-3">
-<a class="hidden md:inline-flex bg-primary-container text-on-primary-container px-6 py-2.5 rounded-lg font-label-caps text-label-caps uppercase tracking-widest active:scale-95 transition-all duration-200 hover:glow-sm" href="contact.html">
+<a class="hidden md:inline-flex bg-primary-container text-on-primary-container px-6 py-2.5 rounded-lg font-label-caps text-label-caps uppercase tracking-widest active:scale-95 transition-all duration-200 hover:glow-sm" href="/contact">
                 Request a Quote
             </a>
 <button class="md:hidden inline-flex h-12 w-12 items-center justify-center rounded-lg border border-surface-variant text-on-surface transition-colors hover:bg-surface-variant" id="mobile-menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-nav-panel">
@@ -167,18 +167,18 @@
 </div>
 <div class="md:hidden hidden border-t border-surface-variant bg-surface-container-low" id="mobile-nav-panel">
 <nav class="flex flex-col gap-2 px-6 py-4">
-<a class="rounded-lg px-4 py-3 text-on-surface-variant transition-colors hover:bg-surface-variant hover:text-on-surface" href="home.html">Home</a>
-<a class="rounded-lg px-4 py-3 text-on-surface-variant transition-colors hover:bg-surface-variant hover:text-on-surface" href="products.html">Products</a>
-<a class="rounded-lg px-4 py-3 text-on-surface-variant transition-colors hover:bg-surface-variant hover:text-on-surface" href="projects.html">Our Projects</a>
-<a class="rounded-lg px-4 py-3 text-primary" href="about.html">About Us</a>
-<a class="rounded-lg px-4 py-3 text-on-surface-variant transition-colors hover:bg-surface-variant hover:text-on-surface" href="contact.html">Contact Us</a>
+<a class="rounded-lg px-4 py-3 text-on-surface-variant transition-colors hover:bg-surface-variant hover:text-on-surface" href="/">Home</a>
+<a class="rounded-lg px-4 py-3 text-on-surface-variant transition-colors hover:bg-surface-variant hover:text-on-surface" href="/products">Products</a>
+<a class="rounded-lg px-4 py-3 text-on-surface-variant transition-colors hover:bg-surface-variant hover:text-on-surface" href="/projects">Our Projects</a>
+<a class="rounded-lg px-4 py-3 text-primary" href="/about">About Us</a>
+<a class="rounded-lg px-4 py-3 text-on-surface-variant transition-colors hover:bg-surface-variant hover:text-on-surface" href="/contact">Contact Us</a>
 <a class="mt-2 rounded-lg bg-primary px-4 py-3 text-center font-label-caps text-label-caps uppercase tracking-widest text-on-primary" href="contact.html">Request a Quote</a>
 </nav>
 </div>
 </header>
 <main>
 <!-- Hero Section -->
-<section class="relative h-[819px] flex items-center justify-center overflow-hidden px-6 lg:px-24">
+<section class="relative min-h-[70vh] sm:h-[819px] flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-24">
 <div class="absolute inset-0 z-0">
 <div class="w-full h-full bg-cover bg-center opacity-40" data-alt="An ultra-modern, high-end architectural project featuring sophisticated linear LED lighting integrated into dark charcoal concrete walls. The scene is shot at twilight, with deep blacks and cool grays dominated by striking, precise rays of warm light. The aesthetic is professional, minimalist, and luxurious, reflecting the technical excellence of a premier lighting provider." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCVON1ArwvXW-xx9CG3Pz2p7BZhD5qaY46vhWi2b7rllIgS9Pjxcx1GF02kh5A13aqqFIL_HS3TPwG6iekBV5yLchkBfpvskmCJOVE8Oh-FmwjspdmRW8OL7ZGLQHQAKFUJnL-LLuQhhQVPXOeU9pmVRwGzJMLNhKhjaoDXMpVQ2rW7_PaomwQ-BwUxoqXTVtez26SxUpzAkB2o2j1iixWzL11fr5GtnbdGm8iulaSpV3gZ-u82o08kRw')">
 </div>
@@ -200,10 +200,10 @@
 </div>
 </section>
 <!-- Our Story & Mission Bento Section -->
-<section class="max-w-[1440px] mx-auto px-6 lg:px-24 py-section-gap">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<section class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-24 py-16 sm:py-section-gap">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-gutter">
 <!-- Story Card -->
-<div class="lg:col-span-7 bg-surface-container-low p-10 rounded-xl tech-border flex flex-col justify-between group overflow-hidden relative">
+<div class="lg:col-span-7 bg-surface-container-low p-6 sm:p-8 lg:p-10 rounded-xl tech-border flex flex-col justify-between group overflow-hidden relative">
 <div class="relative z-10">
 <span class="font-label-caps text-label-caps text-primary mb-stack-md block uppercase">The Genesis</span>
 <h2 class="font-headline-lg text-headline-lg mb-stack-lg">Our Story</h2>
@@ -216,7 +216,7 @@
 <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-primary/5 rounded-full blur-[100px] group-hover:bg-primary/15 transition-all duration-700"></div>
 </div>
 <!-- Mission Card -->
-<div class="lg:col-span-5 bg-primary-container p-10 rounded-xl flex flex-col justify-center text-on-primary-container relative overflow-hidden">
+<div class="lg:col-span-5 bg-primary-container p-6 sm:p-8 lg:p-10 rounded-xl flex flex-col justify-center text-on-primary-container relative overflow-hidden">
 <span class="font-label-caps text-label-caps text-on-primary-container/80 mb-stack-md block uppercase">Our North Star</span>
 <h2 class="font-headline-lg text-headline-lg mb-stack-lg leading-tight">Our Mission</h2>
 <p class="font-body-lg text-body-lg font-medium italic">
@@ -230,8 +230,8 @@
 </div>
 </section>
 <!-- What We Stand For (Pillars) -->
-<section class="bg-surface-container-lowest py-section-gap">
-<div class="max-w-[1440px] mx-auto px-6 lg:px-24">
+<section class="bg-surface-container-lowest py-16 sm:py-section-gap">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-24">
 <div class="text-center mb-16">
 <h2 class="font-headline-lg text-headline-lg mb-4">What We Stand For</h2>
 <div class="w-24 h-1 bg-primary mx-auto"></div>
@@ -320,7 +320,7 @@
 </div>
 </section>
 <!-- Final CTA Section -->
-<section class="px-6 lg:px-24 py-section-gap overflow-hidden">
+<section class="px-4 sm:px-6 lg:px-24 py-16 sm:py-section-gap overflow-hidden">
 <div class="relative bg-surface-container-high rounded-3xl p-12 lg:p-24 text-center overflow-hidden border border-primary/20">
 <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
 
@@ -342,9 +342,9 @@
 </main>
 <!-- Footer -->
 <footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-surface-variant">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-section-gap px-6 lg:px-24 py-20 max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-section-gap px-4 sm:px-6 lg:px-24 py-12 sm:py-20 max-w-[1440px] mx-auto">
 <div class="md:col-span-1">
-<a href="home.html" class="inline-block mb-6">
+<a href="/" class="inline-block mb-6">
   <img src="logo.png" alt="Last Chance Lighting" class="h-20 w-auto object-contain">
 </a>
 <p class="text-on-surface-variant font-body-md mb-8">Specialized architectural lighting for those who value the intersection of form and function.</p>
@@ -366,23 +366,23 @@
 <div class="md:col-span-1">
 <h4 class="font-label-caps text-label-caps text-primary mb-6 uppercase tracking-widest">Company</h4>
 <ul class="space-y-4">
-<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="home.html">Home</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="products.html">Products</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="projects.html">Our Projects</a></li>
-<li><a class="text-primary underline" href="about.html">About Us</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="contact.html">Contact Us</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="/">Home</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="/products">Products</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="/projects">Our Projects</a></li>
+<li><a class="text-primary underline" href="/about">About Us</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="/contact">Contact Us</a></li>
 </ul>
 </div>
 <div class="md:col-span-1">
 <h4 class="font-label-caps text-label-caps text-primary mb-6 uppercase tracking-widest">Contact</h4>
 <ul class="space-y-4 text-on-surface-variant">
 <li class="flex items-center gap-3"><span class="material-symbols-outlined text-sm">mail</span> info@lastchancelighting.lk</li>
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-sm">call</span> +1 (800) LUX-LITE</li>
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-sm">location_on</span> Design District, New York, NY</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-sm">call</span> +94707071010</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-sm">location_on</span> 335A, Galle Road, Colombo 03, Sri Lanka</li>
 </ul>
 </div>
 </div>
-<div class="px-6 lg:px-24 py-8 border-t border-surface-variant/50 max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="px-4 sm:px-6 lg:px-24 py-8 border-t border-surface-variant/50 max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
 <span class="text-on-surface-variant font-label-caps text-[10px] opacity-80 hover:opacity-100 transition-opacity">© 2024 Last Chance Lighting (Pvt) Ltd. All rights reserved.</span>
 <div class="flex gap-8">
 <a class="text-on-surface-variant font-label-caps text-[10px] uppercase hover:text-on-surface" href="#">Shipping &amp; Returns</a>
@@ -392,19 +392,19 @@
 </footer>
 <!-- Mobile Nav Anchor -->
 <div class="md:hidden fixed bottom-0 left-0 right-0 z-[60] bg-surface-container-low border-t border-surface-variant px-6 py-4 flex justify-around">
-<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary transition-all" href="home.html">
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary transition-all" href="/">
 <span class="material-symbols-outlined">home</span>
 <span class="font-label-caps text-[8px] uppercase">Home</span>
 </a>
-<a class="flex flex-col items-center gap-1 text-primary" href="about.html">
+<a class="flex flex-col items-center gap-1 text-primary" href="/about">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">info</span>
 <span class="font-label-caps text-[8px] uppercase font-bold">About</span>
 </a>
-<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary transition-all" href="products.html">
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary transition-all" href="/products">
 <span class="material-symbols-outlined">lightbulb</span>
 <span class="font-label-caps text-[8px] uppercase">Products</span>
 </a>
-<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary transition-all" href="contact.html">
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary transition-all" href="/contact">
 <span class="material-symbols-outlined">mail</span>
 <span class="font-label-caps text-[8px] uppercase">Contact</span>
 </a>
