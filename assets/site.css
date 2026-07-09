@@ -438,6 +438,29 @@ body {
   background-color: #A3181E;
 }
 
+/* Contact form inline feedback */
+.contact-form-feedback {
+  display: block;
+  margin-bottom: 0.75rem;
+  padding: 0.875rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.contact-form-feedback--success {
+  border: 1px solid rgba(22, 101, 52, 0.25);
+  background: #f0fdf4;
+  color: #166534;
+}
+
+.contact-form-feedback--error {
+  border: 1px solid rgba(185, 28, 28, 0.25);
+  background: #fef2f2;
+  color: #991b1b;
+}
+
 .catalog-section-header {
   display: flex;
   flex-wrap: wrap;

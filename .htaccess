@@ -6,8 +6,9 @@
   RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^\ ]+)\.html
   RewriteRule ^([^\.]+)\.html$ /$1 [R=301,L]
   
-  # Redirect .php to non-.php version
+  # Redirect .php to non-.php version (GET only — never strip POST data)
   RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^\ ]+)\.php
+  RewriteCond %{REQUEST_METHOD} !POST
   RewriteRule ^([^\.]+)\.php$ /$1 [R=301,L]
   
   # Rewrite requests to .html files
