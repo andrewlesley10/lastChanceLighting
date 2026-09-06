@@ -869,7 +869,7 @@ select.input { appearance: none; background-image:
   right: clamp(16px, 3vw, 28px); bottom: clamp(16px, 3vw, 28px);
   display: inline-flex; align-items: center; gap: 10px;
   padding: 14px; border-radius: 999px;
-  background: var(--color-brand); color: #fff; text-decoration: none;
+  background: #25d366; color: #fff; text-decoration: none;   /* WhatsApp brand green */
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
   transition: background-color .18s ease, transform .2s cubic-bezier(.4, 0, .2, 1), box-shadow .2s ease;
 }
@@ -881,7 +881,7 @@ select.input { appearance: none; background-image:
   overflow: hidden; white-space: nowrap;
   transition: max-width .32s cubic-bezier(.4, 0, .2, 1), margin-right .32s cubic-bezier(.4, 0, .2, 1);
 }
-.wa-fab:hover { background: var(--color-brand-dark); transform: translateY(-2px); box-shadow: 0 10px 26px rgba(0, 0, 0, 0.34); }
+.wa-fab:hover { background: #1fbe5b; transform: translateY(-2px); box-shadow: 0 10px 26px rgba(0, 0, 0, 0.34); }
 .wa-fab:hover .wa-fab__label,
 .wa-fab:focus-visible .wa-fab__label { max-width: 140px; margin-right: 2px; }
 .wa-fab:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
@@ -889,7 +889,7 @@ select.input { appearance: none; background-image:
 /* slow attention ring, so it reads as live without nagging */
 .wa-fab::after {
   content: ""; position: absolute; inset: 0; border-radius: inherit;
-  border: 2px solid var(--color-accent); pointer-events: none;
+  border: 2px solid #25d366; pointer-events: none;
   animation: waPulse 2.8s ease-out infinite;
 }
 @keyframes waPulse {
