@@ -19,7 +19,7 @@
 <meta name="twitter:description" content="Whether you're weighing up a single pendant or specifying an entire building, our team is easiest to reach in person or by phone."/>
 <title>Contact Last Chance Lighting (Pvt) Ltd | Colombo Showroom</title>
 <link rel="icon" type="image/png" href="favicon.png"/>
-<script>(function(){var d=document.documentElement;d.className+=" js";var t=null;try{t=localStorage.getItem("lcl-theme");}catch(e){}if(t!=="dark"&&t!=="light"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";}d.setAttribute("data-theme",t);})();</script>
+<script>(function(){var d=document.documentElement;d.className+=" js";var t=null;try{t=localStorage.getItem("lcl-theme");}catch(e){}if(t!=="dark"&&t!=="light"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";}d.setAttribute("data-theme",t);/* preloader only on a cold open or a refresh, never on internal navigation */var s=true;try{var n=performance.getEntriesByType&&performance.getEntriesByType("navigation")[0];var r=n?n.type==="reload":(performance.navigation&&performance.navigation.type===1);s=!!r||!sessionStorage.getItem("lcl-seen");sessionStorage.setItem("lcl-seen","1");}catch(e){s=true;}if(s)d.className+=" preload";})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&amp;family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
@@ -133,6 +133,12 @@
       <div class="field">
         <label for="message">Tell us about your space</label>
         <textarea class="input" id="message" name="message" rows="4" placeholder="Room, style, timeline — whatever you have." required></textarea>
+      </div>
+      <!-- honeypot: hidden from people, irresistible to bots. Positioned
+           off-screen rather than display:none, which some bots skip. -->
+      <div class="hp-field" aria-hidden="true">
+        <label for="website">Website</label>
+        <input id="website" name="website" type="text" tabindex="-1" autocomplete="off"/>
       </div>
       <div class="contact-form-feedback" id="form-status" role="status" aria-live="polite" hidden></div>
       <button type="submit" class="btn btn-primary btn-block btn-lg" id="contact-submit">Send message</button>

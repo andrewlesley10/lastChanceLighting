@@ -7,8 +7,16 @@
 (function () {
   'use strict';
 
-  /* ---------- preloader ---------- */
+  /* ---------- preloader ----------
+     The <head> script decides whether this load gets one (cold open or
+     refresh — not internal navigation) and marks <html> accordingly. When it
+     didn't, drop the element outright rather than running the show/hide
+     cycle over something CSS is already hiding. */
   var preloader = document.getElementById('preloader');
+  if (preloader && !document.documentElement.classList.contains('preload')) {
+    if (preloader.parentNode) preloader.parentNode.removeChild(preloader);
+    preloader = null;
+  }
   if (preloader) {
     var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var shownAt = Date.now();

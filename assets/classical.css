@@ -731,7 +731,9 @@ select.input { appearance: none; background-image:
   opacity: 1;
   transition: opacity 0.5s ease;
 }
-.js .preloader { display: flex; }
+/* `preload` is added in <head> only on a cold open or a refresh — internal
+   navigation never gets it, so page-to-page moves are instant */
+.js.preload .preloader { display: flex; }
 .preloader.is-hidden { opacity: 0; pointer-events: none; }
 
 .preloader__mark { display: flex; flex-direction: column; align-items: center; gap: 38px; }
@@ -990,4 +992,10 @@ select.input { appearance: none; background-image:
 
 @media (prefers-reduced-motion: reduce) {
   .glow-orbs { display: none; }
+}
+
+/* honeypot — off-screen rather than display:none, which some bots skip */
+.hp-field {
+  position: absolute; left: -9999px; top: auto;
+  width: 1px; height: 1px; overflow: hidden;
 }
