@@ -590,7 +590,15 @@
           show(el);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      /* threshold MUST stay 0. A ratio threshold is a fraction of the
+         element's own area, so any container taller than the viewport can
+         never reach it: the 16-card Products grid collapses to one column on
+         a phone, making it many screens tall, so its ratio peaks well under
+         0.12 and the cards never reveal. (Zooming out shrank it enough to
+         cross the line, which is why it appeared to fix itself.) With 0 it
+         fires on first pixel, and rootMargin does the "wait until it's
+         properly on screen" job instead — independent of element height. */
+    }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
 
     // the hero runs its own on-load entrance — keep the scroll observer off it
     function skip(el) { return el.closest && el.closest('.hero'); }
@@ -613,5 +621,20 @@
         io.observe(container);
       }
     );
+
+    /* Safety net. Content being permanently invisible is the worst way this
+       can fail, and it fails silently. Once everything has loaded, force
+       anything still hidden but already on screen into view. */
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        Array.prototype.forEach.call(
+          scope.querySelectorAll('.reveal:not(.is-visible)'),
+          function (el) {
+            var r = el.getBoundingClientRect();
+            if (r.top < window.innerHeight && r.bottom > 0) show(el);
+          }
+        );
+      }, 400);
+    }, { once: true });
   })();
 })();
