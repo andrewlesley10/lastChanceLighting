@@ -282,127 +282,122 @@
   }
 
   /* ---------- catalogue ---------- */
+  /* The five ranges actually stocked — mirrors the images/ folders. */
   var CATEGORIES = [
-    'Chandeliers', 'Pendant Lights', 'Wall Lighting', 'Ceiling Lights',
-    'LED Systems', 'Outdoor', 'Industrial', 'Smart Systems'
+    'Chandeliers', 'Ceiling Lights', 'Wall Lights', 'Lamps', 'Outdoor Lighting'
   ];
-  var ROOMS = [
-    'Living Room', 'Dining Room', 'Bedroom', 'Kitchen & Dining',
-    'Outdoor & Garden', 'Office & Study', 'Retail & Hospitality'
-  ];
-  var PRODUCTS = [
-    { id: 'cinnamon-chandelier', name: 'The Cinnamon Chandelier', category: 'Chandeliers',
-      rooms: ['Living Room', 'Dining Room'], wattage: '6 × 4W E14 LED', lumens: '2,200 lm',
-      colorTemp: '2700K warm white', dimensions: 'Ø820 × H650 mm', materials: 'Brass frame, hand-cut crystal drops',
-      tagline: 'A quiet centrepiece for a room that entertains.',
-      description: 'Hand-assembled on a solid brass frame, each drop cut and hung individually in our Colombo workshop. Built for rooms with tall ceilings and long dinners.' },
-    { id: 'colombo-grand-chandelier', name: 'Colombo Grand Chandelier', category: 'Chandeliers',
-      rooms: ['Dining Room'], wattage: '12 × 4W E14 LED', lumens: '4,800 lm',
-      colorTemp: '2700K warm white', dimensions: 'Ø1100 × H900 mm', materials: 'Brass, blown glass',
-      tagline: 'Scaled for entrance halls and grand dining rooms.',
-      description: 'Our largest chandelier, specified for double-height foyers and formal dining halls. Every tier ships pre-wired and is hung by our own installation team.' },
-    { id: 'tea-estate-pendant', name: 'Tea Estate Pendant', category: 'Pendant Lights',
-      rooms: ['Kitchen & Dining', 'Living Room'], wattage: '1 × 9W LED', lumens: '750 lm',
-      colorTemp: '3000K soft white', dimensions: 'Ø280 × H320 mm', materials: 'Woven rattan, brass fittings',
-      tagline: 'Warm, woven light over a kitchen island.',
-      description: 'Rattan woven by artisans in the hill country, paired with a brass gimbal so the shade can be angled once it’s hung. A favourite over kitchen counters and breakfast tables.' },
-    { id: 'arabian-sea-pendant-trio', name: 'Arabian Sea Pendant Trio', category: 'Pendant Lights',
-      rooms: ['Dining Room', 'Kitchen & Dining'], wattage: '3 × 7W LED', lumens: '1,500 lm total',
-      colorTemp: '3000K soft white', dimensions: 'Adjustable drop to 900 mm', materials: 'Hand-blown glass, brass',
-      tagline: 'Three softly blown globes, hung at staggered heights.',
-      description: 'Each globe is mouth-blown, so no two catch the light quite the same way. Supplied with adjustable drop rods to suit your ceiling height and table below.' },
-    { id: 'kandy-wall-sconce', name: 'Kandy Wall Sconce', category: 'Wall Lighting',
-      rooms: ['Living Room', 'Bedroom'], wattage: '1 × 6W LED', lumens: '420 lm',
-      colorTemp: '2700K warm white', dimensions: 'W180 × H260 mm', materials: 'Brushed brass, alabaster glass',
-      tagline: 'A soft wash of light beside the bed or the sofa.',
-      description: 'The alabaster diffuser takes the edge off a bare bulb’s glare, giving a warm, even wash rather than a hot spot — kind to reading in bed or a quiet corner of the living room.' },
-    { id: 'fort-facade-wall-light', name: 'Fort Facade Wall Light', category: 'Wall Lighting',
-      rooms: ['Outdoor & Garden', 'Office & Study'], wattage: '1 × 8W LED', lumens: '600 lm',
-      colorTemp: '3000K soft white', dimensions: 'W140 × H220 mm', ipRating: 'IP54', materials: 'Powder-coated aluminium',
-      tagline: 'Weatherproofed for verandas and entrance walls.',
-      description: 'Rated for covered outdoor use, this fixture holds up against Colombo’s monsoon humidity without losing its finish. A common choice for entrance porticoes and covered walkways.' },
-    { id: 'nilgala-flush-mount', name: 'Nilgala Flush Mount', category: 'Ceiling Lights',
-      rooms: ['Bedroom', 'Office & Study'], wattage: '18W LED panel', lumens: '1,600 lm',
-      colorTemp: '4000K neutral white', dimensions: 'Ø400 × H60 mm', materials: 'Aluminium body, opal acrylic diffuser',
-      tagline: 'Even, glare-free light for low ceilings.',
-      description: 'Sits close to the ceiling for rooms where a pendant would hang too low. The opal diffuser spreads light evenly across the room instead of casting a single bright disc.' },
-    { id: 'ella-ring-ceiling-light', name: 'Ella Ring Ceiling Light', category: 'Ceiling Lights',
-      rooms: ['Living Room', 'Dining Room'], wattage: '24W LED ring', lumens: '2,100 lm',
-      colorTemp: '2700K–6000K adjustable', dimensions: 'Ø600 × H80 mm', materials: 'Spun aluminium',
-      tagline: 'One fixture that shifts from warm evenings to crisp daylight.',
-      description: 'A remote-adjustable colour temperature lets the same fixture serve a relaxed dinner and a bright afternoon of schoolwork or admin, without swapping bulbs.' },
-    { id: 'linear-cove-led-strip', name: 'Linear Cove LED Strip', category: 'LED Systems',
-      rooms: ['Living Room', 'Office & Study', 'Retail & Hospitality'], wattage: '14.4W per metre', lumens: '1,200 lm/m',
-      colorTemp: '3000K soft white', dimensions: 'Cut to length, IP20', materials: 'Aluminium channel, flexible PCB',
-      tagline: 'Hidden light that traces a ceiling or a shelf.',
-      description: 'Supplied in an aluminium channel that diffuses the individual LEDs into a single even line — for cove ceilings, joinery shelves and display cabinets, cut to your exact run.' },
-    { id: 'trackline-spotlight-system', name: 'TrackLine Spotlight System', category: 'LED Systems',
-      rooms: ['Retail & Hospitality', 'Office & Study'], wattage: '3 × 10W adjustable heads', lumens: '900 lm per head',
-      colorTemp: '3000K–4000K', dimensions: '1m track, expandable', materials: 'Aluminium track, die-cast heads',
-      tagline: 'Aim it at what you want customers to see.',
-      description: 'Each head rotates and tilts independently on a shared track, so a single run of ceiling can highlight a changing shop window or gallery wall without rewiring.' },
-    { id: 'monsoon-bollard-light', name: 'Monsoon-Ready Bollard Light', category: 'Outdoor',
-      rooms: ['Outdoor & Garden'], wattage: '10W LED', lumens: '850 lm',
-      colorTemp: '3000K soft white', dimensions: 'H600 mm', ipRating: 'IP65', materials: 'Marine-grade aluminium',
-      tagline: 'Path lighting built for the wet season.',
-      description: 'Sealed against driving rain and salt air alike, these bollards mark garden paths and driveways through a full monsoon without corroding or fogging.' },
-    { id: 'garden-wash-uplighter', name: 'Garden Wash Uplighter', category: 'Outdoor',
-      rooms: ['Outdoor & Garden'], wattage: '6W LED', lumens: '480 lm',
-      colorTemp: '3000K soft white', dimensions: 'Ø90 × H120 mm', ipRating: 'IP67', materials: 'Stainless steel, tempered glass',
-      tagline: 'Uplights a tree trunk or a garden wall after dark.',
-      description: 'A tight beam angle grazes texture — brick, bark, stone — rather than flooding it, the way a single frangipani looks lit at night rather than floodlit.' },
-    { id: 'warehouse-high-bay', name: 'Warehouse High Bay', category: 'Industrial',
-      rooms: ['Retail & Hospitality', 'Office & Study'], wattage: '100W LED', lumens: '13,000 lm',
-      colorTemp: '5000K daylight', dimensions: 'Ø400 × H350 mm', ipRating: 'IP54', materials: 'Die-cast aluminium heat sink',
-      tagline: 'Bright, even coverage for tall ceilings.',
-      description: 'Engineered for warehouse and factory ceilings 6 metres and above, where the light needs to reach the floor evenly without a forest of fixtures.' },
-    { id: 'factory-floor-batten', name: 'Factory Floor Batten', category: 'Industrial',
-      rooms: ['Office & Study'], wattage: '36W LED', lumens: '4,200 lm',
-      colorTemp: '5000K daylight', dimensions: 'L1200 × W80 mm', ipRating: 'IP44', materials: 'Polycarbonate, aluminium',
-      tagline: 'Dependable rows of light for workshops and stores.',
-      description: 'A simple, robust batten fixture specified by the row for workshops, stockrooms and back-of-house areas that just need reliable, even light.' },
-    { id: 'smart-scene-dimmer-panel', name: 'Smart Scene Dimmer Panel', category: 'Smart Systems',
-      rooms: ['Living Room', 'Office & Study'], wattage: 'Wall-mounted controller', lumens: 'Controls up to 40 fixtures',
-      colorTemp: 'App + physical panel', dimensions: 'W86 × H86 mm', materials: 'Aluminium frame, glass touch panel',
-      tagline: 'One tap for ‘movie night’, one tap for ‘dinner’.',
-      description: 'Replaces a wall of switches with saved scenes — set once by our technicians during install, then recalled with a tap or a voice command.' },
-    { id: 'whole-home-lighting-hub', name: 'Whole-Home Lighting Hub', category: 'Smart Systems',
-      rooms: ['Living Room', 'Bedroom', 'Office & Study'], wattage: 'Central hub', lumens: 'Zigbee + Wi-Fi bridge',
-      colorTemp: 'Voice-assistant compatible', dimensions: '100 × 100 × 30 mm', materials: 'ABS enclosure',
-      tagline: 'Brings every room onto one app, one schedule.',
-      description: 'A single hub that speaks to every fixture in the house, so sunset dimming, away-mode and morning routines all run from one app instead of five.' }
-  ];
+  /* Every usable photo in images/, by range. Phone screenshots
+     (status bar + gallery chrome) are left out. */
+  var GALLERY = {
+    'Chandeliers': [
+      'images/chandeliar/chandelier-01.jpg',
+      'images/chandeliar/chandelier-02.jpg',
+      'images/chandeliar/chandelier-03.jpg',
+      'images/chandeliar/chandelier-04.jpg',
+      'images/chandeliar/chandelier-05.jpg',
+      'images/chandeliar/chandelier-06.jpg',
+      'images/chandeliar/chandelier-07.jpg',
+      'images/chandeliar/chandelier-08.jpg',
+      'images/chandeliar/chandelier-09.jpg',
+      'images/chandeliar/chandelier-11.jpg',
+      'images/chandeliar/chandelier-12.jpg',
+      'images/chandeliar/chandelier-13.jpg',
+      'images/chandeliar/chandelier-14.jpg',
+      'images/chandeliar/chandelier-15.jpg',
+      'images/chandeliar/chandelier-16.jpg',
+      'images/chandeliar/chandelier-17.jpg',
+      'images/chandeliar/chandelier-18.jpg',
+      'images/chandeliar/chandelier-19.jpg',
+      'images/chandeliar/chandelier-20.jpg',
+      'images/chandeliar/chandelier-21.jpg',
+      'images/chandeliar/chandelier-22.jpg',
+      'images/chandeliar/chandelier-23.jpg',
+      'images/chandeliar/chandelier-24.jpg',
+      'images/chandeliar/chandelier-25.jpg',
+      'images/chandeliar/chandelier-27.jpg',
+      'images/chandeliar/chandelier-28.jpg'
+    ],
+    'Ceiling Lights': [
+      'images/ceiling_lights/ceiling-01.jpg',
+      'images/ceiling_lights/ceiling-02.jpg',
+      'images/ceiling_lights/ceiling-03.jpg',
+      'images/ceiling_lights/ceiling-04.jpg',
+      'images/ceiling_lights/ceiling-06.jpg',
+      'images/ceiling_lights/ceiling-07.jpg',
+      'images/ceiling_lights/ceiling-08.jpg',
+      'images/ceiling_lights/ceiling-09.jpg',
+      'images/ceiling_lights/ceiling-10.jpg',
+      'images/ceiling_lights/ceiling-11.jpg',
+      'images/ceiling_lights/ceiling-12.jpg',
+      'images/ceiling_lights/ceiling-13.jpg',
+      'images/ceiling_lights/ceiling-14.jpg',
+      'images/ceiling_lights/ceiling-15.jpg',
+      'images/ceiling_lights/ceiling-16.jpg',
+      'images/ceiling_lights/ceiling-17.jpg',
+      'images/ceiling_lights/ceiling-18.jpg',
+      'images/ceiling_lights/ceiling-19.jpg',
+      'images/ceiling_lights/ceiling-20.jpg',
+      'images/ceiling_lights/ceiling-21.jpg',
+      'images/ceiling_lights/ceiling-22.jpg',
+      'images/ceiling_lights/ceiling-23.jpg',
+      'images/ceiling_lights/ceiling-24.jpg'
+    ],
+    'Wall Lights': [
+      'images/wall_lights/wall-02.jpg',
+      'images/wall_lights/wall-03.jpg',
+      'images/wall_lights/wall-04.jpg',
+      'images/wall_lights/wall-07.jpg',
+      'images/wall_lights/wall-08.jpg',
+      'images/wall_lights/wall-09.jpg',
+      'images/wall_lights/wall-10.jpg',
+      'images/wall_lights/wall-11.jpg',
+      'images/wall_lights/wall-12.jpg',
+      'images/wall_lights/wall-13.jpg',
+      'images/wall_lights/wall-14.jpg',
+      'images/wall_lights/wall-15.jpg',
+      'images/wall_lights/wall-16.jpg',
+      'images/wall_lights/wall-17.jpg',
+      'images/wall_lights/wall-18.jpg',
+      'images/wall_lights/wall-19.jpg',
+      'images/wall_lights/wall-20.jpg',
+      'images/wall_lights/wall-21.jpg',
+      'images/wall_lights/wall-22.jpg',
+      'images/wall_lights/wall-23.jpg',
+      'images/wall_lights/wall-24.jpg',
+      'images/wall_lights/wall-25.jpg'
+    ],
+    'Lamps': [
+      'images/lamps/lamp-01.jpg',
+      'images/lamps/lamp-02.jpg',
+      'images/lamps/lamp-03.jpg',
+      'images/lamps/lamp-04.jpg',
+      'images/lamps/lamp-05.jpg',
+      'images/lamps/lamp-06.jpg',
+      'images/lamps/lamp-07.jpg',
+      'images/lamps/lamp-08.jpg'
+    ],
+    'Outdoor Lighting': [
+      'images/outdoor/outdoor-01.jpg',
+      'images/outdoor/outdoor-02.jpg',
+      'images/outdoor/outdoor-05.jpg',
+      'images/outdoor/outdoor-06.jpg',
+      'images/outdoor/outdoor-07.jpg'
+    ]
+  };
 
   function esc(s) {
     return String(s).replace(/[&<>"']/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
     });
   }
-  function plateLabel(name) {
-    return '<figure class="plate flush-top ar-4-3"><span class="plate__label">' + esc(name) + '</span></figure>';
-  }
-  function productCard(p) {
-    return '<a href="product-detail.html?id=' + encodeURIComponent(p.id) + '" class="card card--media card--link">' +
-      plateLabel(p.name + ' photo') +
-      '<div class="card__pad">' +
-        '<span class="tag tag-accent">' + esc(p.category) + '</span>' +
-        '<div class="card__title">' + esc(p.name) + '</div>' +
-        '<p class="card__body">' + esc(p.tagline) + '</p>' +
-        '<div class="card__meta"><span>' + esc(p.wattage) + ' · ' + esc(p.lumens) + '</span><span>' + esc(p.dimensions) + '</span></div>' +
-      '</div></a>';
-  }
 
-  /* ----- Products listing ----- */
-  var grid = document.getElementById('catalogue-grid');
-  if (grid) {
-    var catRow = document.getElementById('filter-categories');
-    var roomRow = document.getElementById('filter-rooms');
-    var countEl = document.getElementById('catalogue-count');
+  /* ----- Products: category chips driving the showroom gallery ----- */
+  var catRow = document.getElementById('filter-categories');
+  if (catRow) {
     var params = new URLSearchParams(window.location.search);
     var startCat = params.get('category');
     var state = {
-      category: startCat && CATEGORIES.indexOf(startCat) !== -1 ? startCat : 'All',
-      room: 'All'
+      category: startCat && CATEGORIES.indexOf(startCat) !== -1 ? startCat : 'All'
     };
 
     function chip(label, active) {
@@ -410,146 +405,119 @@
         '" data-value="' + esc(label) + '">' + esc(label) + '</button>';
     }
     var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var TOTAL = PRODUCTS.length;
-    var shownCount = null;   // last rendered "showing N"
-    var firstPaint = true;
 
     function renderChips() {
       catRow.innerHTML = ['All'].concat(CATEGORIES).map(function (c) { return chip(c, c === state.category); }).join('');
-      roomRow.innerHTML = ['All'].concat(ROOMS).map(function (r) { return chip(r, r === state.room); }).join('');
     }
 
-    // #8 — tween "Showing N of 16 pieces" when the filtered count changes
-    function setCount(n) {
-      if (shownCount === null || prefersReduced || shownCount === n) {
-        countEl.textContent = 'Showing ' + n + ' of ' + TOTAL + ' pieces';
-        shownCount = n;
-        return;
-      }
-      var from = shownCount, to = n, t0 = null, dur = 420;
-      shownCount = n;
-      function tick(ts) {
-        if (t0 === null) t0 = ts;
-        var p = Math.min((ts - t0) / dur, 1);
-        var v = Math.round(from + (to - from) * (p * (2 - p)));
-        countEl.textContent = 'Showing ' + v + ' of ' + TOTAL + ' pieces';
-        if (p < 1) requestAnimationFrame(tick);
-      }
-      requestAnimationFrame(tick);
+    /* ----- showroom gallery: same chips, every photo we hold ----- */
+    var galleryGrid = document.getElementById('gallery-grid');
+    var galleryCount = document.getElementById('gallery-count');
+    var lightbox = null, lbImg = null, lbCount = null, lbList = [], lbIndex = 0, lbReturnTo = null;
+
+    function galleryList() {
+      if (state.category !== 'All') return (GALLERY[state.category] || []).slice();
+      return CATEGORIES.reduce(function (all, c) { return all.concat(GALLERY[c] || []); }, []);
     }
 
-    // #7 — repaint the grid; on filter changes the new cards stagger in
-    function paintGrid(list) {
-      if (!list.length) {
-        grid.className = 'catalogue-empty';
-        grid.innerHTML = '<div class="empty-state"><p>No pieces match that combination yet — try a different room, or ask us directly.</p>' +
-          '<a href="contact.html" class="btn btn-secondary" style="margin-top:12px">Ask our team</a></div>';
-        return;
-      }
-      grid.className = 'grid cols-4';
-      grid.innerHTML = list.map(productCard).join('');
-      if (firstPaint || prefersReduced) { firstPaint = false; return; } // first load handled by the scroll-reveal
-      Array.prototype.forEach.call(grid.children, function (card, i) {
-        card.style.animationDelay = Math.min(i * 45, 270) + 'ms';
-        card.classList.add('card--enter');
-        card.addEventListener('animationend', function ae() {
-          card.classList.remove('card--enter');
-          card.style.animationDelay = '';
-          card.removeEventListener('animationend', ae);
-        });
+    function renderGallery() {
+      if (!galleryGrid) return;
+      lbList = galleryList();
+      var label = state.category === 'All' ? 'the showroom' : state.category.toLowerCase();
+      galleryCount.textContent = lbList.length + ' photo' + (lbList.length === 1 ? '' : 's') + ' from ' + label;
+      galleryGrid.innerHTML = lbList.map(function (src, i) {
+        return '<button type="button" class="gallery__item" data-i="' + i + '" ' +
+          'aria-label="Enlarge photo ' + (i + 1) + ' of ' + lbList.length + '">' +
+          '<img src="' + esc(src) + '" alt="" loading="lazy" decoding="async"></button>';
+      }).join('');
+    }
+
+    function buildLightbox() {
+      if (lightbox) return;
+      var arrow = function (d) {
+        return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" ' +
+          'stroke-linecap="round" stroke-linejoin="round"><path d="' +
+          (d === 'prev' ? 'm15 18-6-6 6-6' : 'm9 18 6-6-6-6') + '"/></svg>';
+      };
+      lightbox = document.createElement('div');
+      lightbox.className = 'lightbox';
+      lightbox.setAttribute('role', 'dialog');
+      lightbox.setAttribute('aria-modal', 'true');
+      lightbox.setAttribute('aria-label', 'Photo viewer');
+      lightbox.innerHTML =
+        '<img class="lightbox__img" alt="">' +
+        '<button type="button" class="lightbox__btn lightbox__close" aria-label="Close">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" ' +
+          'stroke-linecap="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>' +
+        '<button type="button" class="lightbox__btn lightbox__prev" aria-label="Previous photo">' + arrow('prev') + '</button>' +
+        '<button type="button" class="lightbox__btn lightbox__next" aria-label="Next photo">' + arrow('next') + '</button>' +
+        '<p class="lightbox__count"></p>';
+      document.body.appendChild(lightbox);
+      lbImg = lightbox.querySelector('.lightbox__img');
+      lbCount = lightbox.querySelector('.lightbox__count');
+
+      lightbox.querySelector('.lightbox__close').addEventListener('click', closeLightbox);
+      lightbox.querySelector('.lightbox__prev').addEventListener('click', function () { step(-1); });
+      lightbox.querySelector('.lightbox__next').addEventListener('click', function () { step(1); });
+      // click the backdrop (but not the photo or a control) to dismiss
+      lightbox.addEventListener('click', function (e) { if (e.target === lightbox) closeLightbox(); });
+    }
+
+    function paintLightbox() {
+      lbImg.src = lbList[lbIndex];
+      lbCount.textContent = (lbIndex + 1) + ' / ' + lbList.length;
+    }
+    function step(d) {
+      lbIndex = (lbIndex + d + lbList.length) % lbList.length;   // wraps both ways
+      paintLightbox();
+    }
+
+    function onLightboxKey(e) {
+      if (e.key === 'Escape') { closeLightbox(); return; }
+      if (e.key === 'ArrowLeft') { step(-1); return; }
+      if (e.key === 'ArrowRight') { step(1); return; }
+      if (e.key !== 'Tab') return;
+      // keep focus inside the dialog while it's open
+      var f = lightbox.querySelectorAll('button');
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+
+    function openLightbox(i) {
+      buildLightbox();
+      lbIndex = i;
+      lbReturnTo = document.activeElement;
+      paintLightbox();
+      lightbox.classList.add('is-open');
+      requestAnimationFrame(function () { lightbox.classList.add('is-shown'); });
+      document.body.style.overflow = 'hidden';        // don't scroll the page behind it
+      document.addEventListener('keydown', onLightboxKey);
+      lightbox.querySelector('.lightbox__close').focus();
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('is-shown');
+      document.removeEventListener('keydown', onLightboxKey);
+      document.body.style.overflow = '';
+      setTimeout(function () { lightbox.classList.remove('is-open'); }, prefersReduced ? 0 : 250);
+      if (lbReturnTo && lbReturnTo.focus) lbReturnTo.focus();   // back where they came from
+    }
+
+    if (galleryGrid) {
+      galleryGrid.addEventListener('click', function (e) {
+        var b = e.target.closest('.gallery__item');
+        if (b) openLightbox(Number(b.getAttribute('data-i')));
       });
     }
 
-    function renderGrid() {
-      var list = PRODUCTS.filter(function (p) {
-        return (state.category === 'All' || p.category === state.category) &&
-               (state.room === 'All' || p.rooms.indexOf(state.room) !== -1);
-      });
-      setCount(list.length);
-      paintGrid(list);
-    }
-    function refresh() { renderChips(); renderGrid(); }
+    function refresh() { renderChips(); renderGallery(); }
 
     catRow.addEventListener('click', function (e) {
       var b = e.target.closest('[data-value]'); if (!b) return;
       state.category = b.getAttribute('data-value'); refresh();
     });
-    roomRow.addEventListener('click', function (e) {
-      var b = e.target.closest('[data-value]'); if (!b) return;
-      state.room = b.getAttribute('data-value'); refresh();
-    });
     refresh();
-  }
-
-  /* ----- Product detail ----- */
-  var detail = document.getElementById('product-detail');
-  if (detail) {
-    var id = new URLSearchParams(window.location.search).get('id');
-    var product = PRODUCTS.filter(function (p) { return p.id === id; })[0] || PRODUCTS[0];
-    var catHref = 'products.html?category=' + encodeURIComponent(product.category);
-
-    var specs = [
-      ['Category', product.category],
-      ['Wattage', product.wattage],
-      ['Light Output', product.lumens],
-      ['Colour Temperature', product.colorTemp],
-      ['Dimensions', product.dimensions],
-      ['Materials', product.materials]
-    ];
-    if (product.ipRating) specs.push(['IP Rating', product.ipRating]);
-
-    var related = PRODUCTS.filter(function (p) {
-      return p.category === product.category && p.id !== product.id;
-    }).slice(0, 3);
-    if (!related.length) {
-      related = PRODUCTS.filter(function (p) { return p.id !== product.id; }).slice(0, 3);
-    }
-
-    document.title = product.name + ' | Last Chance Lighting (Pvt) Ltd';
-
-    detail.innerHTML =
-      '<nav class="breadcrumb wrap"><a href="products.html">Products</a> › <a href="' + catHref + '">' +
-        esc(product.category) + '</a> › ' + esc(product.name) + '</nav>' +
-      '<section class="section wrap split split--wide-media" style="align-items:flex-start">' +
-        '<div>' +
-          '<figure class="plate ar-4-3"><span class="plate__label">' + esc(product.name) + ' — main photo</span></figure>' +
-          '<div class="thumb-row">' +
-            '<figure class="plate ar-1-1"><span class="plate__label">Detail</span></figure>' +
-            '<figure class="plate ar-1-1"><span class="plate__label">In situ</span></figure>' +
-            '<figure class="plate ar-1-1"><span class="plate__label">Finish</span></figure>' +
-          '</div>' +
-        '</div>' +
-        '<div>' +
-          '<span class="tag tag-accent">' + esc(product.category) + '</span>' +
-          '<h1 style="margin:14px 0 10px">' + esc(product.name) + '</h1>' +
-          '<p class="lead" style="font-size:16px">' + esc(product.tagline) + '</p>' +
-          '<div style="display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 22px">' +
-            product.rooms.map(function (r) { return '<span class="tag tag-neutral">' + esc(r) + '</span>'; }).join('') +
-          '</div>' +
-          '<p style="opacity:0.85;line-height:1.7">' + esc(product.description) + '</p>' +
-          '<div class="cta-row" style="margin-top:8px">' +
-            '<a href="contact.html" class="btn btn-primary">Request a quote</a>' +
-            '<a href="contact.html#showroom" class="btn btn-secondary">See it at the showroom</a>' +
-          '</div>' +
-          '<hr class="rule" style="margin:28px 0 4px">' +
-          '<p class="filter-label" style="margin-top:20px">Specifications</p>' +
-          '<table class="spec-table"><tbody>' +
-            specs.map(function (s) { return '<tr><td>' + esc(s[0]) + '</td><td>' + esc(s[1]) + '</td></tr>'; }).join('') +
-          '</tbody></table>' +
-        '</div>' +
-      '</section>' +
-      '<hr class="rule rule--inset">' +
-      '<section class="section section--handoff wrap">' +
-        '<h2 style="margin-bottom:24px">More From ' + esc(product.category) + '</h2>' +
-        '<div class="grid cols-3">' +
-          related.map(function (rp) {
-            return '<a href="product-detail.html?id=' + encodeURIComponent(rp.id) + '" class="card card--media card--link">' +
-              plateLabel(rp.name + ' photo') +
-              '<div class="card__pad"><div class="card__title" style="font-size:16px">' + esc(rp.name) + '</div>' +
-              '<p class="card__body">' + esc(rp.tagline) + '</p></div></a>';
-          }).join('') +
-        '</div>' +
-      '</section>';
   }
 
   /* ---------- scroll reveal: headings, kickers, and card grids ----------
@@ -605,13 +573,13 @@
 
     // block-level reveals
     Array.prototype.forEach.call(
-      scope.querySelectorAll('.kicker, h1:not(.sr-only), h2, .breadcrumb, .spec-table'),
+      scope.querySelectorAll('.kicker, h1:not(.sr-only), h2'),
       function (el) { if (skip(el)) return; el.classList.add('reveal'); io.observe(el); }
     );
 
     // staggered containers
     Array.prototype.forEach.call(
-      scope.querySelectorAll('.grid, .advice__points, .thumb-row, .stat-band__inner'),
+      scope.querySelectorAll('.grid, .gallery, .advice__points, .stat-band__inner'),
       function (container) {
         if (skip(container)) return;
         var kids = Array.prototype.slice.call(container.children);
