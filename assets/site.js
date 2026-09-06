@@ -286,16 +286,15 @@
   var CATEGORIES = [
     'Chandeliers', 'Ceiling Lights', 'Wall Lights', 'Lamps', 'Outdoor Lighting'
   ];
-  /* Every usable photo in images/, by range. Phone screenshots
-     (status bar + gallery chrome) are left out. */
+  /* Every usable photo in images/, by range. Left out: phone screenshots,
+     and anything with text burned into it — supplier watermarks, an
+     AI-generation stamp, and in-scene signage. */
   var GALLERY = {
     'Chandeliers': [
       'images/chandeliar/chandelier-01.jpg',
       'images/chandeliar/chandelier-02.jpg',
-      'images/chandeliar/chandelier-03.jpg',
       'images/chandeliar/chandelier-04.jpg',
       'images/chandeliar/chandelier-05.jpg',
-      'images/chandeliar/chandelier-06.jpg',
       'images/chandeliar/chandelier-07.jpg',
       'images/chandeliar/chandelier-08.jpg',
       'images/chandeliar/chandelier-09.jpg',
@@ -307,26 +306,16 @@
       'images/chandeliar/chandelier-16.jpg',
       'images/chandeliar/chandelier-17.jpg',
       'images/chandeliar/chandelier-18.jpg',
-      'images/chandeliar/chandelier-19.jpg',
-      'images/chandeliar/chandelier-20.jpg',
-      'images/chandeliar/chandelier-21.jpg',
       'images/chandeliar/chandelier-22.jpg',
-      'images/chandeliar/chandelier-23.jpg',
-      'images/chandeliar/chandelier-24.jpg',
-      'images/chandeliar/chandelier-25.jpg',
       'images/chandeliar/chandelier-27.jpg',
       'images/chandeliar/chandelier-28.jpg'
     ],
     'Ceiling Lights': [
-      'images/ceiling_lights/ceiling-01.jpg',
       'images/ceiling_lights/ceiling-02.jpg',
-      'images/ceiling_lights/ceiling-03.jpg',
       'images/ceiling_lights/ceiling-04.jpg',
-      'images/ceiling_lights/ceiling-06.jpg',
       'images/ceiling_lights/ceiling-07.jpg',
       'images/ceiling_lights/ceiling-08.jpg',
       'images/ceiling_lights/ceiling-09.jpg',
-      'images/ceiling_lights/ceiling-10.jpg',
       'images/ceiling_lights/ceiling-11.jpg',
       'images/ceiling_lights/ceiling-12.jpg',
       'images/ceiling_lights/ceiling-13.jpg',
@@ -335,7 +324,6 @@
       'images/ceiling_lights/ceiling-16.jpg',
       'images/ceiling_lights/ceiling-17.jpg',
       'images/ceiling_lights/ceiling-18.jpg',
-      'images/ceiling_lights/ceiling-19.jpg',
       'images/ceiling_lights/ceiling-20.jpg',
       'images/ceiling_lights/ceiling-21.jpg',
       'images/ceiling_lights/ceiling-22.jpg',
@@ -346,7 +334,6 @@
       'images/wall_lights/wall-02.jpg',
       'images/wall_lights/wall-03.jpg',
       'images/wall_lights/wall-04.jpg',
-      'images/wall_lights/wall-07.jpg',
       'images/wall_lights/wall-08.jpg',
       'images/wall_lights/wall-09.jpg',
       'images/wall_lights/wall-10.jpg',
@@ -358,9 +345,6 @@
       'images/wall_lights/wall-16.jpg',
       'images/wall_lights/wall-17.jpg',
       'images/wall_lights/wall-18.jpg',
-      'images/wall_lights/wall-19.jpg',
-      'images/wall_lights/wall-20.jpg',
-      'images/wall_lights/wall-21.jpg',
       'images/wall_lights/wall-22.jpg',
       'images/wall_lights/wall-23.jpg',
       'images/wall_lights/wall-24.jpg',
