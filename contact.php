@@ -92,7 +92,7 @@ if (trim($_POST['website'] ?? '') !== '') {
 }
 
 if (!within_rate_limit($_SERVER['REMOTE_ADDR'] ?? 'unknown')) {
-    respond(false, 'Too many messages from this connection. Please try again later, or call us on +94 70 707 1010.', 429);
+    respond(false, 'Too many messages from this connection. Please try again later, or call us on 011 403 1131 (landline) or +94 70 707 1010.', 429);
 }
 
 $firstName = trim($_POST['firstName'] ?? '');
