@@ -30,6 +30,17 @@
       "addressRegion": "Western Province",
       "addressCountry": "LK"
     },
+    "location": {
+      "@type": "Place",
+      "name": "Last Chance Lighting (Pvt) Ltd — Warehouse",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "34, Cambel Place",
+        "addressLocality": "Dehiwala",
+        "addressRegion": "Western Province",
+        "addressCountry": "LK"
+      }
+    },
     "geo": {
       "@type": "GeoCoordinates",
       "latitude": 6.9012,
