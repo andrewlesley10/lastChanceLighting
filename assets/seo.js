@@ -12,8 +12,8 @@
     "foundingDate": "1998",
     "telephone": "+94114031131",
     "contactPoint": [
-      { "@type": "ContactPoint", "telephone": "+94114031131", "contactType": "customer service", "description": "Landline", "areaServed": "LK", "availableLanguage": ["en", "si", "ta"] },
-      { "@type": "ContactPoint", "telephone": "+94707071010", "contactType": "sales", "description": "Mobile and WhatsApp", "areaServed": "LK", "availableLanguage": ["en", "si", "ta"] }
+      { "@type": "ContactPoint", "telephone": "+94114031131", "contactType": "customer service", "description": "Hotline", "areaServed": "LK", "availableLanguage": ["en", "si", "ta"] },
+      { "@type": "ContactPoint", "telephone": "+94707071010", "contactType": "sales", "description": "Mobile / WhatsApp", "areaServed": "LK", "availableLanguage": ["en", "si", "ta"] }
     ],
     "openingHoursSpecification": [
       { "@type": "OpeningHoursSpecification",
@@ -27,6 +27,7 @@
       "@type": "PostalAddress",
       "streetAddress": "335A, Galle Road",
       "addressLocality": "Colombo 03",
+      "postalCode": "00300",
       "addressRegion": "Western Province",
       "addressCountry": "LK"
     },
@@ -37,6 +38,7 @@
         "@type": "PostalAddress",
         "streetAddress": "34, Cambel Place",
         "addressLocality": "Dehiwala",
+        "postalCode": "10350",
         "addressRegion": "Western Province",
         "addressCountry": "LK"
       }
