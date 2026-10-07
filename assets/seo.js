@@ -25,7 +25,7 @@
     "email": "info@lastchancelighting.lk",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "335A, Galle Road",
+      "streetAddress": "333 1/2, Galle Road",
       "addressLocality": "Colombo 03",
       "postalCode": "00300",
       "addressRegion": "Western Province",
