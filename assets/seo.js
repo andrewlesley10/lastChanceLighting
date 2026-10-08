@@ -9,7 +9,26 @@
     "logo": "https://lastchancelighting.lk/logo.png",
     "image": "https://lastchancelighting.lk/logo.png",
     "description": "Last Chance Lighting (Pvt) Ltd provides customised lighting, project lighting solutions, and lighting appliances across Sri Lanka since 1998. Colombo showroom on Galle Road.",
+    "legalName": "Last Chance Lighting (Pvt) Ltd",
+    /* 1998 is the heritage of the original Last Chance business; the Pvt Ltd
+       company was incorporated 04 June 2019. Kept as separate properties on
+       purpose — the client asked that the two dates never be conflated. */
     "foundingDate": "1998",
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "ROC Registration No.",
+      "value": "PV-00212320"
+    },
+    "founder": [
+      { "@type": "Person", "name": "Mohamed Kaleel Mohamed Nalir" },
+      { "@type": "Person", "name": "Mohamed Jiffry Mohamed Zaneek" }
+    ],
+    "employee": {
+      "@type": "Person",
+      "name": "Mohamed Jiffry Zahan Ahamed",
+      "jobTitle": "Founder & Managing Director",
+      "telephone": "+94777727778"
+    },
     "telephone": "+94114031131",
     "contactPoint": [
       { "@type": "ContactPoint", "telephone": "+94114031131", "contactType": "customer service", "description": "Hotline", "areaServed": "LK", "availableLanguage": ["en", "si", "ta"] },

@@ -121,13 +121,17 @@ figure { margin: 0; }
 .grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
 .grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
 .grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+.grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
 .grid.gap-lg { gap: clamp(20px, 3vw, 32px); }
 
+@media (max-width: 1080px) {
+  .grid.cols-5 { grid-template-columns: repeat(3, 1fr); }
+}
 @media (max-width: 900px) {
-  .grid.cols-3, .grid.cols-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid.cols-3, .grid.cols-4, .grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 560px) {
-  .grid.cols-2, .grid.cols-3, .grid.cols-4 { grid-template-columns: 1fr; }
+  .grid.cols-2, .grid.cols-3, .grid.cols-4, .grid.cols-5 { grid-template-columns: 1fr; }
 }
 
 /* — split layout (image + copy) — */
@@ -511,6 +515,7 @@ button.tag { cursor: pointer; }
 .timeline.is-lit .timeline__item:nth-child(2)::before { transition-delay: 0.35s; }
 .timeline.is-lit .timeline__item:nth-child(3)::before { transition-delay: 0.65s; }
 .timeline.is-lit .timeline__item:nth-child(4)::before { transition-delay: 0.95s; }
+.timeline.is-lit .timeline__item:nth-child(5)::before { transition-delay: 1.25s; }
 
 @media (max-width: 900px) {
   .timeline__grid { padding-top: 0; }
@@ -1075,4 +1080,56 @@ select.input { appearance: none; background-image:
 @media (prefers-reduced-motion: reduce) {
   .gallery__item img, .gallery__item::after, .lightbox, .lightbox__btn { transition: none; }
   .gallery__item:hover img { transform: none; }
+}
+
+/* ==========================================================================
+   Managing Director's message + company facts (About)
+   ========================================================================== */
+.md-quote {
+  margin: 28px 0 0;
+  padding: 22px 26px;
+  border-left: 2px solid var(--color-accent);
+  background: var(--color-surface-2);
+  border-radius: var(--radius-md);
+}
+.md-quote p {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.75;
+  margin: 0 0 14px;
+  opacity: 0.86;
+}
+.md-quote p:last-of-type { margin-bottom: 18px; }
+.md-quote__by {
+  display: flex; flex-direction: column; gap: 2px;
+  font-family: var(--font-ui); font-style: normal; font-size: 13px;
+  padding-top: 14px;
+  border-top: 1px solid var(--color-divider);
+}
+.md-quote__by strong { font-weight: 700; letter-spacing: 0.01em; }
+.md-quote__by span { opacity: 0.6; font-size: 12px; }
+.md-quote__by a { color: var(--color-accent-700); font-size: 12.5px; }
+
+/* definition list rendered as a two-column fact table */
+.co-facts { margin: 0; display: grid; gap: 0; }
+.co-facts > div {
+  display: grid;
+  grid-template-columns: minmax(180px, 280px) 1fr;
+  gap: 16px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--color-divider);
+}
+.co-facts > div:first-child { border-top: 1px solid var(--color-divider); }
+.co-facts dt {
+  font-family: var(--font-ui); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.55;
+  align-self: center;
+}
+.co-facts dd {
+  margin: 0; font-family: var(--font-body); font-size: 15px; align-self: center;
+}
+@media (max-width: 560px) {
+  .co-facts > div { grid-template-columns: 1fr; gap: 4px; }
+  .md-quote { padding: 18px 18px; }
 }
