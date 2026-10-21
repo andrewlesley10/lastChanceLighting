@@ -2,6 +2,17 @@
 # (this is what would otherwise expose /vids/ and /assets/ as file listings)
 Options -Indexes
 
+# MultiViews content negotiation fights with the extensionless-URL rewrites
+# below (it can answer /home or /about itself, with no proper Content-Type).
+Options -MultiViews
+
+# Always serve the homepage at "/" and always label pages as HTML. Combined
+# with the nosniff header further down, a page sent without a text/html type
+# is offered as a file download on phones instead of being displayed.
+DirectoryIndex index.html
+AddType text/html .html
+AddDefaultCharset UTF-8
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
@@ -13,6 +24,13 @@ Options -Indexes
   RewriteCond %{HTTPS} !=on
   RewriteCond %{HTTP:X-Forwarded-Proto} !=https
   RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+  # The homepage lives at "/" only. Send old /home, /home.html, /index and
+  # /index.html links there. Matching THE_REQUEST (what the visitor actually
+  # asked for) rather than the URL means the internal DirectoryIndex lookup
+  # of index.html for "/" doesn't trigger this rule and loop.
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /+(home|index)(\.html)?[\ ?] [NC]
+  RewriteRule ^ / [R=301,L]
 
   # Redirect .html to non-.html version
   RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^\ ]+)\.html
